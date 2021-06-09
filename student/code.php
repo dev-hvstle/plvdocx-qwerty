@@ -68,6 +68,10 @@
                 header('Location: studentDocs.php');
             }
         }
+        else{
+            $_SESSION['status'] = "You Data is NOT Updated";
+                header('Location: accountsettings.php');
+        }
     }
 
 
