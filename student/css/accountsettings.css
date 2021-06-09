@@ -1,0 +1,504 @@
+:root {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --transition-speed: 600ms;
+  }
+  
+  body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+
+  body::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+  }
+  
+  main {
+    margin-left: 5rem;
+    padding: 1rem;
+  }
+  
+  .navbarCustom {
+    position: fixed;
+    background-color: #28A49E;
+    transition: width 600ms ease;
+    overflow: hidden;
+    z-index: 3;
+  }
+  
+  .navbar-navCustom {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .nav-itemCustom {
+    width: 100%;
+  }
+  
+  .nav-itemCustom:last-child {
+    margin-top: auto;
+  }
+  
+  .nav-linkCustom {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: white;
+    text-decoration: none;
+    filter: white opacity(0.7);
+    transition: var(--transition-speed);
+  }
+  
+  .nav-linkCustom:hover {
+    filter: grayscale(0%) opacity(1);
+    background: #3CC3BD;
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  
+  .link-textCustom {
+    display: none;
+    margin-left: 1rem;
+  }
+  
+  .nav-linkCustom svg {
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+  }
+  
+  .fa-primary {
+    color: white;
+  }
+  
+  .fa-secondary {
+    color: white;
+  }
+  
+  .fa-primary,
+  .fa-secondary {
+    transition: var(--transition-speed);
+  }
+  
+  .logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: #3CC3BD;
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+  }
+  
+  .logo svg {
+    transform: rotate(0deg);
+    transition: var(--transition-speed);
+  }
+  
+  .logo-textCustom
+  {
+    display: inline;
+    position: absolute;
+    
+    left: -999px;
+    transition: var(--transition-speed);
+  }
+  
+  .navbarCustom:hover .logo svg {
+    transform: rotate(-180deg);
+  }
+  
+  /* Small screens */
+  @media only screen and (max-width: 600px) {
+    .navbarCustom {
+      bottom: 0;
+      width: 100vw;
+      height: 5rem;
+    }
+  
+    .logo {
+      display: none;
+    }
+  
+    .navbar-navCustom {
+      flex-direction: row;
+    }
+  
+    .nav-linkCustom {
+      justify-content: center;
+    }
+  
+    main {
+      margin: 0;
+    }
+  }
+  
+  /* Large screens */
+  @media only screen and (min-width: 600px) {
+    .navbarCustom {
+      top: 0;
+      width: 5rem;
+      height: 100vh;
+    }
+  
+    .navbarCustom:hover {
+      width: 16rem;
+    }
+  
+    .navbarCustom:hover .link-textCustom {
+      display: inline;
+    }
+  
+    .navbarCustom:hover .logo svg
+    {
+      margin-left: 11rem;
+    }
+  
+    .navbarCustom:hover .logo-textCustom
+    {
+      left: 0px;
+    }
+  }
+  
+  .dark {
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+  }
+  
+  .light {
+    --text-primary: #1f1f1f;
+    --text-secondary: #000000;
+    --bg-primary: #ffffff;
+    --bg-secondary: #e4e4e4;
+  }
+  
+  .solar {
+    --text-primary: #576e75;
+    --text-secondary: #35535c;
+    --bg-primary: #fdf6e3;
+    --bg-secondary: #f5e5b8;
+  }
+  
+  .theme-icon {
+    display: none;
+  }
+  
+  .dark #darkIcon {
+    display: block;
+  }
+  
+  .light #lightIcon {
+    display: block;
+  }
+  
+  .solar #solarIcon {
+    display: block;
+  }
+  
+  .wrapper{
+    position: relative;
+    top:0vh;
+}
+
+.wrapper h1{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Poppins' sans-serif;
+    padding-bottom: 5vh;
+}
+
+.img-area{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-img{
+    padding: 0 150px 100px;
+    
+}
+
+.imgsize{
+    height: 20vh;
+}
+
+img:hover{
+    opacity: .5;
+    transition: all ease-in .9s;
+}
+
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 150vh;
+    margin: 50px auto;
+    padding: 20px;
+    height: 1.8vh;
+    font-size: 2.5vh;
+}
+.mytabs input[type="radio"] {
+    display: none;
+}
+.mytabs label {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 12px;
+    background: transparent;
+  
+}
+
+.mytabs .tab {
+    position: relative;
+    top:1vh;
+    width: 100%;
+    padding: 20px;
+    border: gray solid 1px;
+    height: 60vh;
+    order: 1;
+    display: none;
+   
+    
+}
+.mytabs .tab h2 {
+    font-size: 3em;
+}
+
+.mytabs input[type='radio']:checked + label + .tab {
+    display: block;
+}
+
+.mytabs input[type="radio"]:checked + label {
+    background: transparent;
+    border-bottom:transparent;
+    color: transparent;
+}
+
+.formCustom{
+    padding-right: 0vh;
+    padding-left: 0vh;
+}
+
+
+.formCustom p{
+    font-size: 1.5vh;
+}
+
+.secondNav{
+  background-color: #3CC3BD;
+  height: 80px;
+  text-decoration: none;
+}
+
+.secondNav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.secondNav li a {
+  display: flex;
+  color: white;
+  text-align: left;
+  padding: 0px 0px;
+  text-decoration: none;
+  opacity: 0;
+}
+
+.plvicon{
+  height: 50px;
+  position: relative;
+  top: -13;
+  stroke: white;
+}
+
+@media screen and (max-width:500px) {
+    .wrapper{
+        position: relative;
+        top:0vh;
+    }
+  
+    .wrapper h1{
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Poppins' sans-serif;
+        position: relative;
+    }
+  
+    .img-area{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+  
+    .single-img{
+        padding: 0 30px 40px;
+        
+    }
+  
+    .imgsize{
+        height: 20vh;
+    }
+  
+    img:hover{
+        opacity: .5;
+        transition: all ease-in .9s;
+    }
+  
+  
+
+    .mytabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 150vh;
+        margin: 0;
+        padding: 0;
+        height: 1.8vh;
+        font-size: 1.5vh;
+       
+    }
+
+    .mytabs label {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 12px;
+        padding-top: 25px;
+        background: transparent;
+        font-weight: bold;
+       
+    }
+
+    .mytabs .tab {
+        position: relative;
+        top:1vh;
+        width: 100%;
+        padding: 20px;
+        border: gray solid 1px;
+        height: 50vh;
+        order: 1;
+        display: none;
+        overflow-x: scroll;
+    }
+    
+    .secondNav li a {
+      display: flex;
+      color: white;
+      text-align: left;
+      padding: 29px 20px;
+      text-decoration: none;
+      opacity: 1;
+      font-weight: 900;
+    }
+}
+
+main{
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 1000px;
+}
+
+
+/*********************
+      Form
+*********************/
+
+select, option, .inputCustom, .lblCustom, .button{
+  padding: 0.2rem 1rem;
+  font-size: 1.5vh;
+  color: inherit;
+}
+.form-boxCustom{
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  
+}
+.form-boxCustom .lblCustom{
+  display: flex;
+  flex-basis: 100%;
+}
+.form-boxCustom .inputCustom,
+.form-boxCustom select,
+.form-boxCustom textarea{
+  flex-basis: 100%;
+}
+
+.form-boxCustom .btnCustom{
+  margin-left: 5rem;
+  position: relative;
+  left: 15vh;
+  background-color: #3cc3bd;
+  font-size: 2vh;
+  border-radius: 5%;
+  border:solid #3cc3bd 1px;
+  color: white;
+  padding: 0.5vh;
+}
+
+
+
+/*******************************
+      Media Queries
+*******************************/
+@media all and (min-width: 500px){
+ 
+  
+ 
+  .form-boxCustom .lblCustom{
+      display: block;
+  }
+
+}
+
+@media all and (min-width: 600px){
+  .form-boxCustom {
+      flex-direction: row;
+  }
+  .form-boxCustom .lblCustom{
+      flex-basis: 9rem;
+      flex-grow: 0;
+      flex-shrink: 0;
+  }
+  .form-boxCustom .inputCustom,
+  .form-boxCustom select,
+  .form-boxCustom textarea{
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 1;
+  }
+  .form-boxCustom .btnCustom{
+      margin-left: 12rem;
+  }
+}
