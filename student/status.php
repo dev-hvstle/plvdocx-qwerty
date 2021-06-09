@@ -78,7 +78,16 @@
                                         <td data-label="Start / End Time"><?php echo $row['transaction_dateFinished']?></td>
                                         <td data-label="Batch Type"><?php echo $row['document_name'] ?></td>
                                         <td data-label="Training Mode"><?php echo $row['document_subtotal'] ?></td>
-                                        <td data-label="#"><a href="#" class="btn">CANCEL</a></td>
+                                        <td data-label="#">
+                                        <div class="row">
+                                            <div class="d-flex justify-content-around">
+                                            <form action="code.php" method="post">
+                                                <input type="hidden" name="delete_id" value="<?php echo $row['employee_id']; ?>">
+                                                <button type="submit" name="delete_btn" class="btn btn-danger ">Cancel</button>
+                                            </form>
+                                            </div>
+                                        </div>
+                                        </td>
                                     </tr>
                                     <?php 
                                             }
