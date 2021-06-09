@@ -9,7 +9,7 @@
         $transaction_status = 4;
         $student_id = $_POST['student_id'];
         $requested_document = $_POST['document_name'];
-        $notification_description = "Your requested document " . "(" . $requested_document . ")" . " is now being signed";
+        $notification_description = "Your requested document " . "(" . $requested_document . ")" . " is now being stamped";
         $date = date("Y/m/d");
         
         $query = "UPDATE transactiondetailed_tbl 

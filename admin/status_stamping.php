@@ -44,6 +44,10 @@ include('includes/navbar.php');
                           inner join transactionmaster_tbl
                           on transactiondetailed_tbl.transactionMaster_id = transactionmaster_tbl.transaction_id
 
+                          INNER JOIN document_tbl
+                          ON transactiondetailed_tbl.document_id = document_tbl.document_id
+
+
                           where transaction_status = 4;
                   ";
         $query_run = mysqli_query($connection, $query);
@@ -80,6 +84,8 @@ include('includes/navbar.php');
                         <!-- Function Update Status -->
                         <form action="status_stamping_code.php" method="post">
                             <input type="hidden" name="transactionDetailed_id" value="<?php echo $row['transactionDetailed_id']; ?>">
+                            <input type="hidden" name="student_id" value="<?php echo $row['student_id']; ?>">
+                            <input type="hidden" name="document_name" value="<?php echo $row['document_name']; ?>">
                             <button type="submit" name="done_btn" class="btn btn-primary">Done</button>
                         </form>    
                         </div>
