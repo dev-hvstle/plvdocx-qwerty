@@ -186,7 +186,7 @@ img{
     background-size: cover;
     background-position: center;
     background-color:#38b8b2;
-    background-image: linear-gradient(rgba(56,184,178,0.8), rgba(56,184,178,0.4)), url('/image/maysan.jpg');
+    background-image: linear-gradient(rgba(56,184,178,0.8), rgba(56,184,178,0.4)), url(image/maysan.jpg);
 }
 
 
@@ -349,7 +349,6 @@ footer{
     }
     .plv-char .plv-cards {
         margin-top: 40vw;
-        
         line-height: 2;
         text-align: center;
         width: 40vh;
@@ -392,6 +391,8 @@ footer{
         height: auto;
       
     }
+
+    
     
     
 }

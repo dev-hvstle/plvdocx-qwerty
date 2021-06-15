@@ -167,9 +167,9 @@
 		<div class="row">
 			<div class="col-sm">
 			
-     			<input type="number" name="student_id" placeholder="Student ID"><br>
+     		<input type="number" name="student_id" placeholder="Student ID"><br>
 		
-     			<input type="text" name="student_ln" placeholder="Last Name"><br>
+     		<input type="text" name="student_ln" placeholder="Last Name"><br>
 				
      		<input type="text" name="student_username" placeholder="Username"><br>
 			 	
