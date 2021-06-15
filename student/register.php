@@ -60,7 +60,7 @@
 	form {
 		position: absolute;
 		width: 100vh;
-		height: 65vh;
+		height: 70vh;
 		border: 2px solid #ccc;
 		padding: 30px;
 		background: #fff;
