@@ -23,8 +23,6 @@
       include('security.php');
       include('includes/navbar.php');
     ?>
-
-
   
     <main>
         <div class="mytabs">
@@ -34,7 +32,7 @@
               <h2>Forms</h2>
                 <div class="wrapper">
                     <div class="img-area">
-                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#requestDocument"><img src="image/cav.png" class="imgsize"></button></div>
+                        <div class="single-img"><button class="btnImage"><img src="image/cav.png" class="imgsize"></button></div>
                         <div class="single-img"><button class="btnImage"><img src="image/completion of inc grade.png" class="imgsize"></button></div>
                         <div class="single-img"><button class="btnImage"><img src="image/formsleaveofabsence.png" class="imgsize"></button></div>
                         <div class="single-img"><button class="btnImage"><img src="image/transfercreds.png" class="imgsize"></button></div>

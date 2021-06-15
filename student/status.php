@@ -82,8 +82,8 @@
                                         <div class="row">
                                             <div class="d-flex justify-content-around">
                                             <form action="code.php" method="post">
-                                                <input type="hidden" name="cancel_id" value="<?php echo $row['transactionDetailed_id']; ?>">
-                                                <button type="submit" name="cancel_btn" class="btn btn-danger ">Cancel</button>
+                                                <input type="hidden" name="delete_id" value="<?php echo $row['employee_id']; ?>">
+                                                <button type="submit" name="delete_btn" class="btn btn-danger ">Cancel</button>
                                             </form>
                                             </div>
                                         </div>
