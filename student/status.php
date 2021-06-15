@@ -59,9 +59,9 @@
                             <table class="table">
                                 <thead>
                                     <tr>
+                                        <th>Transaction ID</th>
                                         <th>Request Created</th>
                                         <th>Release Date</th>
-                                        <th>Document</th>
                                         <th>Total Amount</th>
                                         <th>Action</th>
                                     </tr>
@@ -74,15 +74,15 @@
                                         
                                     ?>
                                     <tr>
+                                        <td data-label="Batch Type"><?php echo $row['transaction_id'] ?></td>
                                         <td data-label="Start Date"><?php echo $row['transaction_date'] ?></td>
                                         <td data-label="Start / End Time"><?php echo $row['transaction_dateFinished']?></td>
-                                        <td data-label="Batch Type"><?php echo $row['document_name'] ?></td>
-                                        <td data-label="Training Mode"><?php echo $row['document_subtotal'] ?></td>
+                                        <td data-label="Training Mode"><?php echo $row['amount_total'] ?></td>
                                         <td data-label="#">
                                         <div class="row">
                                             <div class="d-flex justify-content-around">
                                             <form action="code.php" method="post">
-                                                <input type="hidden" name="delete_id" value="<?php echo $row['employee_id']; ?>">
+                                                <input type="hidden" name="delete_id" value="<?php echo $row['transaction_id']; ?>">
                                                 <button type="submit" name="delete_btn" class="btn btn-danger ">Cancel</button>
                                             </form>
                                             </div>
@@ -326,7 +326,7 @@
 
                                               ON transactiondetailed_tbl.document_id = document_tbl.document_id
 
-                                              WHERE transaction_status = 8 AND student_id = $student_id;
+                                              WHERE transaction_status = 9 AND student_id = $student_id;
                             ";
                             $query_run = mysqli_query($connection, $query);
                         ?>

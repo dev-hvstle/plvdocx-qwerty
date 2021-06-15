@@ -85,6 +85,24 @@
         }
     }
 
+    //delete document request
+    if(isset($_POST['delete_btn'])){
+        $transaction_id = $_POST['delete_id'];
+        $query = "UPDATE transactionmaster_tbl SET isCancelled = 1 WHERE transaction_id='$transaction_id' ;";
+        $query .= "UPDATE transactiondetailed_tbl SET transaction_status = 9 WHERE transactionMaster_id = '$transaction_id';";
+        $query_run = mysqli_multi_query($connection, $query);
+        mysqli_next_result($connection);
+
+        if($query_run){
+            $_SESSION['success'] = "You Data is Deleted";
+            header('Location: register.php');
+        }
+        else{
+            $_SESSION['status'] = "You Data is NOT Deleted";
+            header('Location: register.php');
+        }    
+    }
+
     //login student account
     if(isset($_POST['login_btn'])){
 
