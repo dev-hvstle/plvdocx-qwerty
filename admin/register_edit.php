@@ -64,8 +64,13 @@
                                 </p>
 
 
+                                <!-- Email -->
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" name="employee_ln" value="<?php echo $row['employee_ln'] ?>" class="form-control" placeholder="Email">
+                                </div>
+                                
                                 <!-- Username -->
-
                                 <div class="form-group">
                                     <label> Username </label>
                                     <input type="text" name="employee_username" value="<?php echo $row['employee_username'] ?>" class="form-control" placeholder="Enter Username">

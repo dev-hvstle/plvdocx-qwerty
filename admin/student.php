@@ -65,6 +65,12 @@ include('includes/navbar.php');
             </select>
             </p>
 
+            <!-- Email -->
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" name="student_ln" class="form-control" placeholder="Email">
+            </div>
+
             <!-- Username -->
 
             <div class="form-group">
@@ -162,6 +168,7 @@ include('includes/navbar.php');
             <th> First Name </th>
             <th> Middle Name </th>
             <th> Last Name </th>
+            <th> Email </th>
             <th> StudentType </th>
             <th> Username</th>
             <th> Password </th>

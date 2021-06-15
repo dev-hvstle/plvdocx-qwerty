@@ -60,7 +60,7 @@
 	form {
 		position: absolute;
 		width: 100vh;
-		height: 70vh;
+		height: 75vh;
 		border: 2px solid #ccc;
 		padding: 30px;
 		background: #fff;
@@ -103,18 +103,18 @@
 
 	.firstnameInput{
 		position: relative;
-		top: 23%;
+		top: 21%;
 	}
 	
 	
 	.passwordInput{
 		position: relative;
-		top: 45%;
+		top: 63.5%;
 	}
 
 	.middlenameInput{
 		position: relative;
-		top: 23%;
+		top: 21%;
 	}
 
 	.studenttype{
@@ -130,13 +130,13 @@
 		height: 15%;
 		width: 95%;
 		position: relative;
-		top: 45%;
+		top: 63%;
 		padding: 10px;
 	}
 
 	.btnNext{
 		position: relative;
-		top: 34vh;
+		top: 40vh;
 		width: 10vh;
 		background: #3cc3bd;
 	}
@@ -180,6 +180,8 @@
      		<input type="number" name="student_id" class="student_id" placeholder="Student ID"><br>
 		
      		<input type="text" name="student_ln" placeholder="Last Name"><br>
+
+			<input type="text" name="student_email" placeholder="Email"><br>
 				
      		<input type="text" name="student_username" placeholder="Username"><br>
 			 	
