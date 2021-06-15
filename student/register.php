@@ -60,7 +60,7 @@
 	form {
 		position: absolute;
 		width: 100vh;
-		height: 65vh;
+		height: 70vh;
 		border: 2px solid #ccc;
 		padding: 30px;
 		background: #fff;
@@ -89,11 +89,10 @@
 		display: block;
 		border: 2px solid #ccc;
 		width: 95%;
-		height: 10%;
-		
-	
-		font-size: 12px;
+		height: 15%;
+		font-size: 18px;
 		border-radius: 2px;
+		padding: 10px;
 	}
 	
 
@@ -104,37 +103,35 @@
 
 	.firstnameInput{
 		position: relative;
-		top: 16.4%;
+		top: 23%;
 	}
 	
 	
-
 	.passwordInput{
 		position: relative;
-		top: 32.5%;
+		top: 45%;
 	}
-
-	
 
 	.middlenameInput{
 		position: relative;
-		top: 16.4%;
+		top: 23%;
 	}
 
-	#studentType{
+	.studenttype{
 		font-size: 14px;
-		height: 10%;
+		height: 15%;
 		width: 95%;
 		padding-left: 8px;
+		padding: 10px;
 	}
 
-	#studentLevel{
+	.student_level{
 		font-size: 14px;
-		height: 10%;
+		height: 15%;
 		width: 95%;
 		position: relative;
-		top: 32.8%;
-		padding-left: 10px;
+		top: 45%;
+		padding: 10px;
 	}
 
 	.btnNext{
@@ -143,6 +140,19 @@
 		width: 10vh;
 		background: #3cc3bd;
 	}
+
+	@media screen and (max-width: 500px)  {
+		form {
+			position: absolute;
+			width: 50vh;
+			height: 105vh;
+			border: 2px solid #ccc;
+			padding: 30px;
+			background: #fff;
+			border-radius: 3px;
+		}
+    }
+  
 
 	</style>
 	<!-- CSS only -->
@@ -167,16 +177,17 @@
 		<div class="row">
 			<div class="col-sm">
 			
-     		<input type="number" name="student_id" placeholder="Student ID"><br>
+     		<input type="number" name="student_id" class="student_id" placeholder="Student ID"><br>
 		
      		<input type="text" name="student_ln" placeholder="Last Name"><br>
 				
      		<input type="text" name="student_username" placeholder="Username"><br>
 			 	
      		<input type="password" name="student_password" placeholder="Password"><br>
-	
+			
+			
 
-			<select name="student_type" >
+			<select name="student_type" class="studenttype">
 				<option value="studenttype">Student Type</option>
 				<option value="1">Graduate</option>
 				<option value="2">Undergraduate</option>
@@ -188,10 +199,14 @@
 			<BR>
 			</div>
 			<div class="col-sm">
-			
+
+				
+
      			<input type="firstname" name="student_fn" class="firstnameInput" placeholder="First Name"><br>
+
+				<input type="password" name="student_password" class="passwordInput" placeholder="Confirm Password"><br>
 		
-				 <select name="student_level">
+				<select name="student_level" class="student_level">
 				<option value="Student Level">Student Level</option>
 				<option value="1">College</option>
 				<option value="2">Senior High School</option>
