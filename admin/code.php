@@ -18,30 +18,38 @@
         $isActive = 1;
         $employee_isMale = $_POST['employee_isMale'];
 
-        
-
-        if($employee_password === $cpassword)
-        {
-            $query = "INSERT INTO employee_tbl (employee_id,employee_fn, employee_mn, employee_ln, employee_type, employee_username, employee_password, isActive, employee_isMale) 
-                      VALUES ('$employee_id','$employee_fn','$employee_mn','$employee_ln', '$employee_type', '$employee_username', '$employee_password', '$isActive', '$employee_isMale')";
-            $query_run = mysqli_query($connection, $query);
-
-            if($query_run)
+        if($employee_id === "" || $employee_fn === "" || $employee_ln === "" || $employee_username === "" || $employee_password === ""){
+            $_SESSION['status'] = "Some fields are missing.";
+            header('Location: register.php');
+        }
+        else if($employee_type === "employeetype"){
+            $_SESSION['status'] = "Employee Type isn't correctly set!";
+            header('Location: register.php');
+        }
+        else{
+            if($employee_password === $cpassword)
             {
-                // echo "Saved";
-                $_SESSION['success'] = "Admin Profile Added";
-                header('Location: register.php');
+                $query = "INSERT INTO employee_tbl (employee_id,employee_fn, employee_mn, employee_ln, employee_type, employee_username, employee_password, isActive, employee_isMale) 
+                          VALUES ('$employee_id','$employee_fn','$employee_mn','$employee_ln', '$employee_type', '$employee_username', '$employee_password', '$isActive', '$employee_isMale')";
+                $query_run = mysqli_query($connection, $query);
+    
+                if($query_run)
+                {
+                    // echo "Saved";
+                    $_SESSION['success'] = "Admin Profile Added";
+                    header('Location: register.php');
+                }
+                else
+                {
+                    $_SESSION['status'] = "Admin Profile Not Added. Missing Fields or Wrong Input.";
+                    header('Location: register.php');
+                }
             }
             else
             {
-                $_SESSION['status'] = "Admin Profile Not Added. Missing Fields or Wrong Input.";
+                $_SESSION['status'] = "Password and Confirm Password Does Not Match";
                 header('Location: register.php');
             }
-        }
-        else
-        {
-            $_SESSION['status'] = "Password and Confirm Password Does Not Match";
-            header('Location: register.php');
         }
     }
 
@@ -110,7 +118,7 @@
 
         if($row && $row['employee_type'] != 3){
             $_SESSION['username'] = $username_login;
-            $_SESSION['status'] = null;
+            $_SESSION['status'] = "";
             $_SESSION['type'] = $row['employee_type'];
             $_SESSION['student'] = 0;
             // $_SESSION['id'] = $row['employee_id'];

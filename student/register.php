@@ -163,14 +163,14 @@
 	 <div class="plvicon">
 	 	<img src="image/plvdocxicon.png" height= "10vh" class="plvMoto"   alt="">
      	<h2>Create your PLV Docx Account</h2>
-		<h2>
+		
 		<?php
            if(isset($_SESSION['status']) && $_SESSION['status'] !=''){
             	echo '<h2 class="bg.danger text-black"> '.$_SESSION['status'].' </h2>';
                unset($_SESSION['status']);
             }
         ?>
-		</h2>
+	
 	 </div>
 
 		<div class="container">
@@ -204,16 +204,15 @@
 
      			<input type="firstname" name="student_fn" class="firstnameInput" placeholder="First Name"><br>
 
-				<input type="password" name="student_password" class="passwordInput" placeholder="Confirm Password"><br>
+				<input type="password" name="confirm_password" class="passwordInput" placeholder="Confirm Password"><br>
 		
 				<select name="student_level" class="student_level">
-				<option value="Student Level">Student Level</option>
+				<option value="studentlevel">Student Level</option>
 				<option value="1">College</option>
 				<option value="2">Senior High School</option>
 			</select>
 			</div>
 			<div class="col-sm">
-			
 			
      			<input type="middlename" name="student_mn" class="middlenameInput" placeholder="Middle Name"><br>
 				

@@ -57,6 +57,7 @@ include('includes/navbar.php');
             User Type: 
             <BR>
             <select name="employee_type">
+              <option value="employeetype">Employee Type</option>
               <option value="1">Admin</option>
               <option value="2">Registrar</option>
               <option value="3">Cashier</option>
@@ -179,11 +180,6 @@ include('includes/navbar.php');
                     <td><?php echo $row['employeeType_name']; ?></td>
                     <td><?php echo $row['employee_username']; ?></td>
                     <td><?php echo $row['employee_password']; ?></td>
-
-
-
-                   
-
                     <td>
                     <div class="row">
                         <div class="d-flex justify-content-around">
@@ -215,13 +211,8 @@ include('includes/navbar.php');
     </div>
   </div>
 </div>
-
-
 <!-- /.container-fluid -->
                     <!-- Content Row -->
-
-               
-
                 </div>
                 <!-- /.container-fluid -->
 

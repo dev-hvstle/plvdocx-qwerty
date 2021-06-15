@@ -9,7 +9,7 @@
         header('Location: register.php');
     }
 
-    //register admin function
+    //register student function
     if(isset($_POST['register_btn']))
     {
         $student_id = $_POST['student_id'];
@@ -20,35 +20,46 @@
         $student_level = $_POST['student_level'];
         $student_username = $_POST['student_username'];
         $student_password = $_POST['student_password'];
+        $confirm_password = $_POST['confirm_password'];
         $isActive = 1;
         $student_isMale = 1;
 
-        if($student_password != null)
-        {
-            $query = "INSERT INTO student_tbl (student_id ,student_fn, student_mn, student_ln, student_type, student_username, student_password, student_level, isActive, student_isMale) 
-                      VALUES ('$student_id','$student_fn','$student_mn','$student_ln', '$student_type', '$student_username', '$student_password', '$student_level', '$isActive', '$student_isMale')";
-            $query_run = mysqli_query($connection, $query);
-
-            if($query_run)
+        if($student_id === "" || $student_fn === "" || $student_ln === "" || $student_username === "" || $student_password === ""){
+            $_SESSION['status'] = "Some Fields Are Missing.";
+            header('Location: register.php');
+        }
+        else if($student_type == "studenttype" || $student_level == "studentlevel"){
+            $_SESSION['status'] = "Student Type or Student Level isn't correctly set";
+            header('Location: register.php');
+        }
+        else{
+            if($student_password === $confirm_password && $student_password != null && $confirm_password != null)
             {
-                // echo "Saved";
-                $_SESSION['success'] = "Admin Profile Added";
-                header('Location: loginmain.php');
+                $query = "INSERT INTO student_tbl (student_id ,student_fn, student_mn, student_ln, student_type, student_username, student_password, student_level, isActive, student_isMale) 
+                          VALUES ('$student_id','$student_fn','$student_mn','$student_ln', '$student_type', '$student_username', '$student_password', '$student_level', '$isActive', '$student_isMale')";
+                $query_run = mysqli_query($connection, $query);
+    
+                if($query_run)
+                {
+                    // echo "Saved";
+                    $_SESSION['success'] = "Admin Profile Added";
+                    header('Location: loginmain.php');
+                }
+                else
+                {
+                    $_SESSION['status'] = $student_type;
+                    header('Location: register.php');
+                }
             }
             else
             {
-                $_SESSION['status'] = $student_type;
+                $_SESSION['status'] = "Password and Confirm Password Does Not Match";
                 header('Location: register.php');
             }
         }
-        else
-        {
-            $_SESSION['status'] = "Password and Confirm Password Does Not Match";
-            header('Location: register.php');
-        }
     }
 
-    //update admin account
+    //update student account
     if(isset($_POST['update_btn'])){
         $student_id = $_SESSION['student_id'];
         $student_password = $_POST['student_password'];
@@ -74,24 +85,7 @@
         }
     }
 
-
-    //delete admin account
-    if(isset($_POST['delete_btn'])){
-        $employee_id = $_POST['delete_id'];
-        $query = "UPDATE employee_tbl SET isActive = 0 WHERE employee_id='$employee_id' ";
-        $query_run = mysqli_query($connection, $query);
-
-        if($query_run){
-            $_SESSION['success'] = "You Data is Deleted";
-            header('Location: register.php');
-        }
-        else{
-            $_SESSION['status'] = "You Data is NOT Deleted";
-            header('Location: register.php');
-        }    
-    }
-
-    //login admin account
+    //login student account
     if(isset($_POST['login_btn'])){
 
         function validate($data){
