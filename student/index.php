@@ -125,7 +125,7 @@
             </div>
             <ul class="nav-links">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li>
                   <a href="#about">About</a>
@@ -136,7 +136,7 @@
                 <li>
                 <form action="logout.php" method="POST">
                         <button type="submit" name="logout_btn"  href="logout.php">Logout</button>
-                    </form>
+                </form>
                 </li>
             </ul>
 
