@@ -34,11 +34,19 @@
               <h2>Forms</h2>
                 <div class="wrapper">
                     <div class="img-area">
+<<<<<<< Updated upstream
                         <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#requestDocument"><img src="image/cav.png" class="imgsize"></button></div>
                         <div class="single-img"><button class="btnImage"><img src="image/completion of inc grade.png" class="imgsize"></button></div>
                         <div class="single-img"><button class="btnImage"><img src="image/formsleaveofabsence.png" class="imgsize"></button></div>
                         <div class="single-img"><button class="btnImage"><img src="image/transfercreds.png" class="imgsize"></button></div>
                         <div class="single-img"><button class="btnImage"><img src="image/DIPLOMA.png" class="imgsize"></button></div>
+=======
+                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#addadminprofile"><img src="image/cav.png" class="imgsize"></button></div>
+                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#addadminprofile"><img src="image/completion of inc grade.png" class="imgsize"></button></div>
+                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#addadminprofile"><img src="image/formsleaveofabsence.png" class="imgsize"></button></div>
+                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#addadminprofile"><img src="image/transfercreds.png" class="imgsize"></button></div>
+                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#addadminprofile"><img src="image/DIPLOMA.png" class="imgsize"></button></div>
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
@@ -49,12 +57,12 @@
               <h2>Certifications</h2>
                 <div class="wrapper">
                     <div class="img-area">
-                        <div class="single-img"><button class="btnImage"><img src="image/culmulativegpa.png" class="imgsize"></button></div>
-                        <div class="single-img"><button class="btnImage"><img src="image/description.png" class="imgsize"></button></div>
-                        <div class="single-img"><button class="btnImage"><img src="image/enrollment.png" class="imgsize"></button></div>
-                        <div class="single-img"><button class="btnImage"><img src="image/grades.png" class="imgsize"></button></div>
-                        <div class="single-img"><button class="btnImage"><img src="image/graduation.png" class="imgsize"></button></div>
-                        <div class="single-img"><button class="btnImage"><img src="image/unitsearned.png" class="imgsize"></button></div>
+                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#addadminprofile"><img src="image/culmulativegpa.png" class="imgsize"></button></div>
+                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#addadminprofile"><img src="image/description.png" class="imgsize"></button></div>
+                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#addadminprofile"><img src="image/enrollment.png" class="imgsize"></button></div>
+                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#addadminprofile"><img src="image/grades.png" class="imgsize"></button></div>
+                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#addadminprofile"><img src="image/graduation.png" class="imgsize"></button></div>
+                        <div class="single-img"><button class="btnImage" data-toggle="modal" data-target="#addadminprofile"><img src="image/unitsearned.png" class="imgsize"></button></div>
                     </div>
                 </div>
             </div>

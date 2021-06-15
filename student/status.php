@@ -372,6 +372,76 @@
 
             </div>
 
+            <input type="radio" id="tabunclaimed" name="mytabs">
+            <label for="tabunclaimed">Unclaimed Documents</label>
+            <div class="tab">
+              
+            <div class="wrapper">
+
+            <div class="table-container">
+                        <?php
+                            $student_id = $_SESSION['student_id']; 
+                            $connection = mysqli_connect("localhost","root","","plvdocx_db");
+                            $query = "SELECT  *
+                    
+                                              FROM transactiondetailed_tbl 
+                            
+                                              INNER JOIN transactionmaster_tbl 
+                    
+                                              ON transactiondetailed_tbl.transactionMaster_id = transactionmaster_tbl.transaction_id
+                                              
+                                              INNER JOIN document_tbl
+
+                                              ON transactiondetailed_tbl.document_id = document_tbl.document_id
+
+                                              INNER JOIN transactionstatus_tbl
+
+                                              ON transactiondetailed_tbl.transaction_status = transactionstatus_tbl.transactionStatus_id
+
+                                              WHERE transaction_status > 1 AND transaction_status < 6 AND student_id = $student_id;
+                            ";
+                            $query_run = mysqli_query($connection, $query);
+                        ?>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Request Created</th>
+                                        <th>Release Date</th>
+                                        <th>Document</th>
+                                        <th>Total Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <?php 
+                                        if(mysqli_num_rows($query_run) > 0){
+                                            while($row = mysqli_fetch_assoc($query_run)){   
+                                    ?>
+                                    <tr>
+                                        <td data-label="Start Date"><?php echo $row['transaction_date'] ?></td>
+                                        <td data-label="Start / End Time"><?php echo $row['transaction_dateFinished']?></td>
+                                        <td data-label="Batch Type"><?php echo $row['document_name'] ?></td>
+                                        <td data-label="Training Mode"><?php echo $row['document_subtotal'] ?></td>
+                                        <td><?php echo $row['transactionStatus_name'] ?></td>
+                                    </tr>
+                                    <?php 
+                                            }
+                                        }
+                                        else{
+                                            echo "No Records Found";
+                                        }
+                                    ?>
+                                </tbody>
+
+
+                            </table>
+
+                        </div>
+                    </div>
+
+            </div>
+
     </div>
         
         

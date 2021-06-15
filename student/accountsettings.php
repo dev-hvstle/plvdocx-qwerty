@@ -46,7 +46,7 @@
                       </div>
 
                       <div class="form-boxCustom">
-                        <label class="lblCustom" for="username">username</label>
+                        <label class="lblCustom" for="username">Username</label>
                         <input class="inputCustom" type="text" id="username" name="username" placeholder="<?php echo $_SESSION['student_username'] ?>" disabled>
                       </div>
 
