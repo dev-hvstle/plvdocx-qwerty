@@ -109,9 +109,9 @@ include('includes/navbar.php');
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-dark">Admin Profile 
+    <h6 class="m-0 font-weight-bold text-dark">Admin Staffs 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-              Add Admin Profile 
+              Add Staffs Profile 
             </button>
     </h6>
   </div>
