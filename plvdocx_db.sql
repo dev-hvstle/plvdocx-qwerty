@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2021 at 06:50 PM
+-- Generation Time: Jun 16, 2021 at 04:12 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -188,7 +188,8 @@ CREATE TABLE `student_tbl` (
 INSERT INTO `student_tbl` (`student_id`, `student_fn`, `student_mn`, `student_ln`, `student_type`, `student_username`, `student_password`, `student_level`, `isActive`, `student_isMale`) VALUES
 (180226, 'Vince', '', 'Lucas', 1, '', '', 2, 1, 0),
 (180227, 'Harvey', 'Sanchhez', 'Resurreccion', 2, 'harvey', 'qwe', 1, 1, 1),
-(180229, 'Kier', '', 'Uychutin', 1, 'kier', '1234', 1, 1, 1);
+(180229, 'Kier', '', 'Uychutin', 1, 'kier', '1234', 1, 1, 1),
+(180230, 'Ken', '', 'Mondragon', 1, 'ken', 'admin', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -212,8 +213,8 @@ CREATE TABLE `transactiondetailed_tbl` (
 --
 
 INSERT INTO `transactiondetailed_tbl` (`transactionDetailed_id`, `transactionMaster_id`, `document_id`, `document_quantity`, `document_pages`, `document_pricePerPage`, `document_subtotal`, `transaction_status`) VALUES
-(1, 1, 1, 1, 2, 150, 300, 7),
-(2, 1, 2, 2, 2, 100, 400, 1);
+(1, 1, 1, 1, 2, 150, 300, 9),
+(2, 1, 2, 2, 2, 100, 400, 9);
 
 -- --------------------------------------------------------
 
@@ -229,15 +230,16 @@ CREATE TABLE `transactionmaster_tbl` (
   `amount_payment` int(11) NOT NULL,
   `transaction_date` int(11) NOT NULL,
   `transaction_dateFinished` int(11) NOT NULL,
-  `isFinished` int(1) NOT NULL
+  `isFinished` int(1) NOT NULL,
+  `isCancelled` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `transactionmaster_tbl`
 --
 
-INSERT INTO `transactionmaster_tbl` (`transaction_id`, `student_id`, `employee_id`, `amount_total`, `amount_payment`, `transaction_date`, `transaction_dateFinished`, `isFinished`) VALUES
-(1, 180227, 0, 700, 700, 20210522, 20210522, 0);
+INSERT INTO `transactionmaster_tbl` (`transaction_id`, `student_id`, `employee_id`, `amount_total`, `amount_payment`, `transaction_date`, `transaction_dateFinished`, `isFinished`, `isCancelled`) VALUES
+(1, 180227, 0, 700, 700, 20210522, 20210522, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -262,7 +264,8 @@ INSERT INTO `transactionstatus_tbl` (`transactionStatus_id`, `transactionStatus_
 (5, 'signature'),
 (6, 'toRelease'),
 (7, 'released'),
-(8, 'unclaimed');
+(8, 'unclaimed'),
+(9, 'cancelled');
 
 --
 -- Indexes for dumped tables
@@ -384,7 +387,7 @@ ALTER TABLE `transactionmaster_tbl`
 -- AUTO_INCREMENT for table `transactionstatus_tbl`
 --
 ALTER TABLE `transactionstatus_tbl`
-  MODIFY `transactionStatus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `transactionStatus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

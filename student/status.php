@@ -409,7 +409,6 @@
                                         <th>Release Date</th>
                                         <th>Document</th>
                                         <th>Total Amount</th>
-                                        <th>Status</th>
                                     </tr>
                                 </thead>
 
@@ -423,7 +422,6 @@
                                         <td data-label="Start / End Time"><?php echo $row['transaction_dateFinished']?></td>
                                         <td data-label="Batch Type"><?php echo $row['document_name'] ?></td>
                                         <td data-label="Training Mode"><?php echo $row['document_subtotal'] ?></td>
-                                        <td><?php echo $row['transactionStatus_name'] ?></td>
                                     </tr>
                                     <?php 
                                             }
