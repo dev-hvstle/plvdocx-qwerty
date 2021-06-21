@@ -17,14 +17,18 @@
         $student_mn = $_POST['student_mn'];
         $student_ln = $_POST['student_ln'];
         $student_type = $_POST['student_type'];
+        $student_email = $_POST['student_email'];
         $student_level = $_POST['student_level'];
         $student_username = $_POST['student_username'];
         $student_password = $_POST['student_password'];
         $confirm_password = $_POST['confirm_password'];
         $isActive = 1;
         $student_isMale = 1;
+        $pattern = '/[\\\\\.\+\*\?\^\$\[\]\(\)\{\}\/\'\#\:\!\=\|]/';
 
-        if($student_id === "" || $student_fn === "" || $student_ln === "" || $student_username === "" || $student_password === ""){
+
+
+        if($student_id === "" || $student_fn === "" || $student_ln === "" || $student_username === "" || $student_password === "" || $student_email === ""){
             $_SESSION['status'] = "Some Fields Are Missing.";
             header('Location: register.php');
         }
@@ -32,11 +36,19 @@
             $_SESSION['status'] = "Student Type or Student Level isn't correctly set";
             header('Location: register.php');
         }
+        else if(strlen((string)$student_id) < 6){
+            $_SESSION['status'] = "Student ID is not valid";
+            header('Location: register.php');
+        }
+        else if(preg_match($pattern, $student_password) && preg_match($pattern, $student_username)){
+            $_SESSION['status'] = "Special Characters Aren't Allowed";
+            header('Location: register.php');
+        }
         else{
             if($student_password === $confirm_password && $student_password != null && $confirm_password != null)
             {
-                $query = "INSERT INTO student_tbl (student_id ,student_fn, student_mn, student_ln, student_type, student_username, student_password, student_level, isActive, student_isMale) 
-                          VALUES ('$student_id','$student_fn','$student_mn','$student_ln', '$student_type', '$student_username', '$student_password', '$student_level', '$isActive', '$student_isMale')";
+                $query = "INSERT INTO student_tbl (student_id ,student_fn, student_mn, student_ln, student_type, student_email, student_username, student_password, student_level, isActive, student_isMale) 
+                          VALUES ('$student_id','$student_fn','$student_mn','$student_ln', '$student_type', '$student_email', '$student_username', '$student_password', '$student_level', '$isActive', '$student_isMale')";
                 $query_run = mysqli_query($connection, $query);
     
                 if($query_run)
@@ -104,6 +116,7 @@
     }
 
     //login student account
+
     if(isset($_POST['login_btn'])){
 
         function validate($data){
@@ -113,35 +126,67 @@
             return $data;
          }
 
+        $pattern = '/[\\\\\.\+\*\?\^\$\[\]\(\)\{\}\/\'\#\:\!\=\|]/';
         $username_login = validate($_POST['username']);
         $password_login = validate($_POST['password']);
+        $_SESSION['match'] = 0;
+
+        
 
         $query = "SELECT * FROM student_tbl WHERE student_username='$username_login' AND student_password='$password_login'";
         $query_run = mysqli_query($connection, $query);
         $row = mysqli_fetch_assoc($query_run);
 
-        if($row){
+        var_dump(preg_match($patter, $password_login));
 
-            $_SESSION['username'] = $username_login;
-            $_SESSION['student_id'] = $row['student_id'];
-            $_SESSION['student'] = 1;
-            $_SESSION['student_name'] = $row['student_fn'] . " " . $row['student_mn'] . " " . $row['student_ln'];
-            $_SESSION['student_username'] = $row['student_username'];
-            $_SESSION['student_password'] = $row['student_password'];
-            $_SESSION['status'] = null;
-            $_SESSION['type'] = null;
-            // $_SESSION['id'] = $row['employee_id'];
-            // $_SESSION['status'] =  $_SESSION['id'];
-            
-            header('Location: studentDocs.php');
+        if(preg_match($pattern, $username_login) === 0 || preg_match($patter, $password_login) === 0){
+            if($row){
+
+                $_SESSION['username'] = $username_login;
+                $_SESSION['student_id'] = $row['student_id'];
+                $_SESSION['student'] = 1;
+                $_SESSION['student_name'] = $row['student_fn'] . " " . $row['student_mn'] . " " . $row['student_ln'];
+                $_SESSION['student_username'] = $row['student_username'];
+                $_SESSION['student_password'] = $row['student_password'];
+                $_SESSION['status'] = null;
+                $_SESSION['type'] = null;
+                // $_SESSION['id'] = $row['employee_id'];
+                // $_SESSION['status'] =  $_SESSION['id'];
+                
+                header('Location: studentDocs.php');
+            }
+            else{
+                $_SESSION['status'] = "Email id / Password is Invalid";
+                header('Location: studentDocs.php');
+            }
         }
         else{
-            $_SESSION['status'] = 'Email id / Password is Invalid';
-            echo "wrong";
+            $_SESSION['match'] = preg_match($patter, $password_login);
+            $_SESSION['status'] = "Email id / Password is Invalid";
             header('Location: studentDocs.php');
         }
     }
 
+    //set document name
+    if(isset($_POST['docCav_btn'])){
+        $_SESSION['document_name'] = "cav";
+    }
+
+    if(isset($_POST['docInc_btn'])){
+        $_SESSION['document_name'] = "inc";
+    }
+
+    if(isset($_POST['docAbsence_btn'])){
+        $_SESSION['document_name'] = "absence";
+    }
+
+    if(isset($_POST['docTransfer_btn'])){
+        $_SESSION['document_name'] = "transfer";
+    }
+
+    if(isset($_POST['docDiploma_btn'])){
+        $_SESSION['document_name'] = "diploma";
+    }
     
 
 

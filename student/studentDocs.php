@@ -27,7 +27,17 @@
     ?>
   
     <main>
+      <?php 
+        if(isset($_SESSION['success']) && $_SESSION['success'] !=''){
+            echo '<h2 class="bg-primary text-white"> '.$_SESSION['success'].' </h2>';
+            unset($_SESSION['success']);
+        }
 
+        if(isset($_SESSION['status']) && $_SESSION['status'] !=''){
+            echo '<h2 class="bg-danger text-white"> '.$_SESSION['status'].'</h2>';
+            unset($_SESSION['status']);
+        }
+      ?>
         <div class="mytabs">
             <input type="radio" id="tabfree" name="mytabs" checked="checked">
             <label for="tabfree">Forms</label>
@@ -50,38 +60,73 @@
                                       <h1>Forms</h1>
                                     </div>
 
-                                    <form action="documentcode.php" method="POST">
-                                <div class="modal-body">
+                                  <form action="documentcode.php" method="POST">
+                                  <?php 
+                                      if(isset($_POST['docCav_btn'])){
+                                        $_SESSION['document_id'] = 1;
+                                      }
+                                
+                                      if(isset($_POST['docInc_btn'])){
+                                        $_SESSION['document_id'] = 2;
+                                      }
+                                
+                                      if(isset($_POST['docAbsence_btn'])){
+                                        $_SESSION['document_id'] = 3;
+                                      }
+                                
+                                      if(isset($_POST['docTransfer_btn'])){
+                                        $_SESSION['document_id'] = 4;
+                                      }
+                                
+                                      if(isset($_POST['docDiploma_btn'])){
+                                        $_SESSION['document_id'] = 5;
+                                      }
 
-                                  <!-- Document Name -->
-                                  <div class="form-group">
-                                      <label> Document Name </label>
-                                      <input type="text" name="student_id" class="form-control" placeholder="Document Name" disabled> 
-                                  </div>
+                                      $document_id = $_SESSION['document_id'];
 
-                                  <!-- Number of pages per copy -->
-                                  <div class="form-group">
-                                      <label> Number of pages per copy </label>
-                                      <input type="text" name="student_fn" class="form-control" placeholder="Number of pages per copy" disabled>
-                                  </div>
+                                      $connection = mysqli_connect("localhost","root","","plvdocx_db");
+                                      $query = "SELECT  *
 
-                                  <!-- Price Per Page -->
-                                  <div class="form-group">
-                                      <label>Price Per Page</label>
-                                      <input type="text" name="student_mn" class="form-control" placeholder="Price Per Page" disabled>
-                                  </div>
+                                                        FROM document_tbl
+                                                        
+                                                        WHERE document_id = '$document_id';
+                                      ";
+                                      $query_run = mysqli_query($connection, $query);
+                                      $row = mysqli_fetch_assoc($query_run);
+                                    ?>
+                                    <div class="modal-body">
 
-                                  <!-- Number of copies -->
-                                  <div class="form-group">
-                                      <label>Number of copies</label>
-                                      <input type="text" name="student_ln" class="form-control" placeholder="Number of copies">
-                                  </div>
-                                 
-                                  </div>
-                                  <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                      <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
-                                  </div>
+                                    <!-- Document Name -->
+                                    <div class="form-group">
+                                        <label> Document Name </label>
+                                        <input type="text" name="student_id" class="form-control" placeholder="<?php echo $row['document_name'] ?>" disabled> 
+                                    </div>
+
+                                    <!-- Number of pages per copy -->
+                                    <div class="form-group">
+                                        <label> Number of pages per copy </label>
+                                        <input type="text" name="student_fn" class="form-control" placeholder="<?php echo $row['document_pages'] ?>" disabled>
+                                    </div>
+
+                                    <!-- Price Per Page -->
+                                    <div class="form-group">
+                                        <label>Price Per Page</label>
+                                        <input type="text" name="student_mn" class="form-control" placeholder="<?php echo $row['document_pricePerPageInPhp'] ?>" disabled>
+                                    </div>
+
+                                    <!-- Number of copies -->
+                                    <div class="form-group">
+                                        <label>Number of copies</label>
+                                        <input type="text" name="student_ln" class="form-control" placeholder="Number of copies">
+                                    </div>
+                                  
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <form action="code.php" method="post">
+                                          <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
+                                        </form>
+                                    </div>
                                 </form>
 
                                   </div>
@@ -93,16 +138,16 @@
                             </div>
                           </div>
                         </div>
-                              <div class="single-img"><button class="btnImage" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/cav.png" class="imgsize"></button></div>
-                              <div class="single-img"><button class="btnImage" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/completion of inc grade.png" class="imgsize"></button></div>
-                              <div class="single-img"><button class="btnImage" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/formsleaveofabsence.png" class="imgsize"></button></div>
-                              <div class="single-img"><button class="btnImage" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/transfercreds.png" class="imgsize"></button></div>
-                              <div class="single-img"><button class="btnImage" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/DIPLOMA.png" class="imgsize"></button></div>
-                              <div class="single-img"><button class="btnImage" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/cav.png" class="imgsize"></button></div>
-                              <div class="single-img"><button class="btnImage" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/completion of inc grade.png" class="imgsize"></button></div>
-                              <div class="single-img"><button class="btnImage" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/formsleaveofabsence.png" class="imgsize"></button></div>
-                              <div class="single-img"><button class="btnImage" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/transfercreds.png" class="imgsize"></button></div>
-                              <div class="single-img"><button class="btnImage" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/DIPLOMA.png" class="imgsize"></button></div>
+                              <div class="single-img"><a class="btnImage" name="docCav_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/cav.png" class="imgsize"></a></div>
+                           
+                              <div class="single-img"><button class="btnImage" name="docInc_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/completion of inc grade.png" class="imgsize"></button></div>
+                           
+                              <div class="single-img"><button class="btnImage" name="docAbsence_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/formsleaveofabsence.png" class="imgsize"></button></div>
+                           
+                              <div class="single-img"><button class="btnImage" name="docTransfer_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/transfercreds.png" class="imgsize"></button></div>
+                            
+                              <div class="single-img"><button class="btnImage" name="docDiploma_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/DIPLOMA.png" class="imgsize"></button></div>
+                            
                     </div>
                 </div>
             </div>

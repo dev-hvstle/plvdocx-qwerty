@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2021 at 04:12 PM
+-- Generation Time: Jun 21, 2021 at 12:59 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -40,7 +40,7 @@ CREATE TABLE `document_tbl` (
 --
 
 INSERT INTO `document_tbl` (`document_id`, `document_name`, `document_pricePerPageInPhp`, `document_pages`, `isDeleted`) VALUES
-(1, 'TOR', 150, 3, 0),
+(1, 'CAV', 150, 3, 0),
 (2, 'COR', 100, 1, 0);
 
 -- --------------------------------------------------------
@@ -75,6 +75,7 @@ CREATE TABLE `employee_tbl` (
   `employee_mn` varchar(20) NOT NULL,
   `employee_ln` varchar(20) NOT NULL,
   `employee_type` int(20) NOT NULL,
+  `employee_email` varchar(40) NOT NULL,
   `employee_username` varchar(20) NOT NULL,
   `employee_password` varchar(20) NOT NULL,
   `isActive` int(1) NOT NULL,
@@ -85,11 +86,11 @@ CREATE TABLE `employee_tbl` (
 -- Dumping data for table `employee_tbl`
 --
 
-INSERT INTO `employee_tbl` (`employee_id`, `employee_fn`, `employee_mn`, `employee_ln`, `employee_type`, `employee_username`, `employee_password`, `isActive`, `employee_isMale`) VALUES
-(0, 'Harvey', 'Sanchez', 'Resurreccion', 1, 'rezsolutions', 'admin', 1, 0),
-(1, 'Vince', '', 'Lucas', 2, 'irving', 'lucas', 1, 1),
-(2, 'Kier', '', 'Uychutin', 3, 'kier', 'admin', 0, 1),
-(3, 'Almiras', '', 'Pusing', 1, '', '', 1, 0);
+INSERT INTO `employee_tbl` (`employee_id`, `employee_fn`, `employee_mn`, `employee_ln`, `employee_type`, `employee_email`, `employee_username`, `employee_password`, `isActive`, `employee_isMale`) VALUES
+(0, 'Harvey', 'Sanchez', 'Resurreccion', 1, '', 'rezsolutions', 'admin', 1, 0),
+(1, 'Vince', '', 'Lucas', 2, '', 'irving', 'lucas', 1, 1),
+(2, 'Kier', '', 'Uychutin', 3, '', 'kier', 'admin', 0, 1),
+(3, 'Almiras', '', 'Pusing', 1, '', '', '', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -174,6 +175,7 @@ CREATE TABLE `student_tbl` (
   `student_mn` varchar(20) DEFAULT NULL,
   `student_ln` varchar(20) NOT NULL,
   `student_type` int(11) NOT NULL,
+  `student_email` varchar(40) NOT NULL,
   `student_username` varchar(20) NOT NULL,
   `student_password` varchar(20) NOT NULL,
   `student_level` int(11) NOT NULL,
@@ -185,11 +187,12 @@ CREATE TABLE `student_tbl` (
 -- Dumping data for table `student_tbl`
 --
 
-INSERT INTO `student_tbl` (`student_id`, `student_fn`, `student_mn`, `student_ln`, `student_type`, `student_username`, `student_password`, `student_level`, `isActive`, `student_isMale`) VALUES
-(180226, 'Vince', '', 'Lucas', 1, '', '', 2, 1, 0),
-(180227, 'Harvey', 'Sanchhez', 'Resurreccion', 2, 'harvey', 'qwe', 1, 1, 1),
-(180229, 'Kier', '', 'Uychutin', 1, 'kier', '1234', 1, 1, 1),
-(180230, 'Ken', '', 'Mondragon', 1, 'ken', 'admin', 1, 1, 1);
+INSERT INTO `student_tbl` (`student_id`, `student_fn`, `student_mn`, `student_ln`, `student_type`, `student_email`, `student_username`, `student_password`, `student_level`, `isActive`, `student_isMale`) VALUES
+(180225, 'Cielo', 'Sanchez', 'Resurreccion', 1, 'cielo@gmail.com', 'cieloskie08', 'qwerty', 1, 1, 1),
+(180226, 'Vince', '', 'Lucas', 1, '', '', '', 2, 1, 0),
+(180227, 'Harvey', 'Sanchhez', 'Resurreccion', 2, '', 'harvey', 'qwe', 1, 1, 1),
+(180229, 'Kier', '', 'Uychutin', 1, '', 'kier', '1234', 1, 1, 1),
+(180230, 'Ken', '', 'Mondragon', 1, '', 'ken', 'admin', 1, 1, 1);
 
 -- --------------------------------------------------------
 

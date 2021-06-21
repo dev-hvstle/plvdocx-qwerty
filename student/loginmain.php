@@ -131,13 +131,14 @@
 	 <div class="plvicon">
 	 	<img src="image/plvdocxicon.png" height= "10vh" class="plvMoto"   alt="">
      	<h2>Log In</h2>
+		<h2>
+			<?php 
+				
+					echo $_SESSION['match'];
+					
+			?>
+		</h2>
 	 </div>
-     	<?php
-           // if(isset($_SESSION['status']) && $_SESSION['status'] !=''){
-            //	echo '<h2 class="bg.danger text-black"> '.$_SESSION['status'].' </h2>';
-              //  unset($_SESSION['status']);
-            //}
-        ?>
      	<label>Username</label>
      	<input type="username" name="username" placeholder="Username"><br>
 

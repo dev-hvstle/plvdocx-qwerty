@@ -68,7 +68,7 @@ include('includes/navbar.php');
 
             <div class="form-group">
                 <label>Email</label>
-                <input type="text" name="employee_ln" class="form-control" placeholder="Email">
+                <input type="email" name="employee_email" class="form-control" placeholder="Email">
             </div>
 
 

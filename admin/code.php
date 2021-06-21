@@ -11,6 +11,7 @@
         $employee_mn = $_POST['employee_mn'];
         $employee_ln = $_POST['employee_ln'];
         $employee_type = $_POST['employee_type'];
+        $employee_email = $_POST['employee_email'];
         $employee_username = $_POST['employee_username'];
         $employee_password = $_POST['employee_password'];
         $cpassword = $_POST['confirmpassword'];
@@ -29,8 +30,8 @@
         else{
             if($employee_password === $cpassword)
             {
-                $query = "INSERT INTO employee_tbl (employee_id,employee_fn, employee_mn, employee_ln, employee_type, employee_username, employee_password, isActive, employee_isMale) 
-                          VALUES ('$employee_id','$employee_fn','$employee_mn','$employee_ln', '$employee_type', '$employee_username', '$employee_password', '$isActive', '$employee_isMale')";
+                $query = "INSERT INTO employee_tbl (employee_id,employee_fn, employee_mn, employee_ln, employee_type, employee_email, employee_username, employee_password, isActive, employee_isMale) 
+                          VALUES ('$employee_id','$employee_fn','$employee_mn','$employee_ln', '$employee_type', '$employee_email', '$employee_username', '$employee_password', '$isActive', '$employee_isMale')";
                 $query_run = mysqli_query($connection, $query);
     
                 if($query_run)

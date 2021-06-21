@@ -20,6 +20,12 @@
 
 	<style>
 
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+	}
+
 	body {
 		background-image: url(image/studentBackground.jpg);
 		display: flex;
@@ -181,7 +187,7 @@
 		
      		<input type="text" name="student_ln" placeholder="Last Name"><br>
 
-			<input type="text" name="student_email" placeholder="Email"><br>
+			<input type="email" name="student_email" placeholder="Email"><br>
 				
      		<input type="text" name="student_username" placeholder="Username"><br>
 			 	
