@@ -124,7 +124,11 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         <form action="code.php" method="post">
-                                          <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
+                                          <button type="submit" name="registerbtn" class="btn btn-primary">Buy</button>
+                                        </form>
+
+                                        <form action="code.php" method="post">
+                                          <button type="submit" name="registerbtn" class="btn btn-success">Add to cart</button>
                                         </form>
                                     </div>
                                 </form>
