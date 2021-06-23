@@ -132,11 +132,6 @@
 	 	<img src="image/plvdocxicon.png" height= "10vh" class="plvMoto"   alt="">
      	<h2>Log In</h2>
 		<h2>
-			<?php 
-				
-					echo $_SESSION['match'];
-					
-			?>
 		</h2>
 	 </div>
      	<label>Username</label>
