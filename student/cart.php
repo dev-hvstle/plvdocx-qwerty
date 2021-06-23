@@ -6,6 +6,9 @@
     <script defer src="js/app.js"></script>
     <link rel="stylesheet" href="css/status.css"/>
     <link rel="stylesheet" href="css/table.css"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
     
       <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
@@ -17,6 +20,29 @@
     type = "image/x-icon">
     
     <title>PLV Docx</title>
+    <style>
+        #CheckOut{
+            position: relative;
+            left:26vh;
+            float: right;
+            top: 75vh;
+            border-radius: 2px;
+            background-color: #3cc3bd;
+        }
+
+        @media screen and (max-width:500px) {
+            
+        #CheckOut{
+            position: relative;
+            left:0vh;
+            float: right;
+            top: 65vh;
+            border-radius: 2px;
+            background-color: #3cc3bd;
+        }
+
+        }
+    </style>
   </head>
   
   <body>
@@ -92,10 +118,14 @@
 
 
                             </table>
+                            
+                        </div>
 
+                        <div class="container">
+                            <button type="submit" name="delete_btn" class="btn btn-success" id="CheckOut">Check Out</button>          
                         </div>
        
-
+                                          
     </main>
    
   </body>
