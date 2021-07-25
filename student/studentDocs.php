@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="js/app.js"></script>
     <link rel="stylesheet" href="css/studentDocs.css" />
     <link
@@ -16,7 +17,6 @@
 
     <title>PLV Docx</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
   </head>
   
   <body>
@@ -59,79 +59,42 @@
                                     <div class="modal-header">
                                       <h1>Forms</h1>
                                     </div>
-
-                                  <form action="documentcode.php" method="POST">
-                                  <?php 
-                                      if(isset($_POST['docCav_btn'])){
-                                        $_SESSION['document_id'] = 1;
-                                      }
-                                
-                                      if(isset($_POST['docInc_btn'])){
-                                        $_SESSION['document_id'] = 2;
-                                      }
-                                
-                                      if(isset($_POST['docAbsence_btn'])){
-                                        $_SESSION['document_id'] = 3;
-                                      }
-                                
-                                      if(isset($_POST['docTransfer_btn'])){
-                                        $_SESSION['document_id'] = 4;
-                                      }
-                                
-                                      if(isset($_POST['docDiploma_btn'])){
-                                        $_SESSION['document_id'] = 5;
-                                      }
-
-                                      $document_id = $_SESSION['document_id'];
-
-                                      $connection = mysqli_connect("localhost","root","","plvdocx_db");
-                                      $query = "SELECT  *
-
-                                                        FROM document_tbl
-                                                        
-                                                        WHERE document_id = '$document_id';
-                                      ";
-                                      $query_run = mysqli_query($connection, $query);
-                                      $row = mysqli_fetch_assoc($query_run);
-                                    ?>
+                                    <form method="post" action="code.php">
                                     <div class="modal-body">
 
                                     <!-- Document Name -->
                                     <div class="form-group">
                                         <label> Document Name </label>
-                                        <input type="text" name="student_id" class="form-control" placeholder="<?php echo $row['document_name'] ?>" disabled> 
+                                        <input type="text" id="docx_name" name="document_name" class="form-control" readonly> 
                                     </div>
 
                                     <!-- Number of pages per copy -->
                                     <div class="form-group">
                                         <label> Number of pages per copy </label>
-                                        <input type="text" name="student_fn" class="form-control" placeholder="<?php echo $row['document_pages'] ?>" disabled>
+                                        <input type="text" id="docx_pages" name="document_pages" class="form-control" readonly>
                                     </div>
 
                                     <!-- Price Per Page -->
                                     <div class="form-group">
                                         <label>Price Per Page</label>
-                                        <input type="text" name="student_mn" class="form-control" placeholder="<?php echo $row['document_pricePerPageInPhp'] ?>" disabled>
+                                        <input type="text" id="docx_price"  name="document_price" class="form-control" readonly>
                                     </div>
 
                                     <!-- Number of copies -->
                                     <div class="form-group">
                                         <label>Number of copies</label>
-                                        <input type="text" name="student_ln" class="form-control" placeholder="Number of copies">
+                                        <input type="text" name="document_copies" class="form-control" placeholder="Number of copies">
                                     </div>
                                   
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <form action="code.php" method="post">
-                                          <button type="submit" name="registerbtn" class="btn btn-primary">Buy</button>
-                                        </form>
-
-                                        <form action="code.php" method="post">
-                                          <button type="submit" name="registerbtn" class="btn btn-success">Add to cart</button>
-                                        </form>
+                                        <button type="submit" name="buy_btn" class="btn btn-primary">Buy</button>
+                                        <button type="submit" name="addCart_btn" class="btn btn-success">Add to cart</button>
+                                        <input type="hidden" id="document_id" name="document_id">
                                     </div>
-                                </form>
+                                    </form>
+                               
 
                                   </div>
 
@@ -142,16 +105,48 @@
                             </div>
                           </div>
                         </div>
-                              <div class="single-img"><a class="btnImage" name="docCav_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/cav.png" class="imgsize"></a></div>
+                              
+                              <div class="single-img">
+                                <button id="docx_modal" class="btnImage" onclick="showModal(this);" name="docCav_btn" value="1">
+                                  <img src="image/cav.png" class="imgsize">
+                                </button>
+                              </div>
+                              
                            
-                              <div class="single-img"><button class="btnImage" name="docInc_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/completion of inc grade.png" class="imgsize"></button></div>
+                              <div class="single-img">
+                                <button id="docx_modal" class="btnImage" onclick="showModal(this);" name="docInc_btn" value="2">
+                                  <img src="image/completion of inc grade.png" class="imgsize">
+                                </button>
+                              </div>
                            
                               <div class="single-img"><button class="btnImage" name="docAbsence_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/formsleaveofabsence.png" class="imgsize"></button></div>
                            
                               <div class="single-img"><button class="btnImage" name="docTransfer_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/transfercreds.png" class="imgsize"></button></div>
                             
                               <div class="single-img"><button class="btnImage" name="docDiploma_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/DIPLOMA.png" class="imgsize"></button></div>
-                            
+                              <script>
+                                function showModal(id){
+                                  
+                                  var document_id = id.value;
+                                  console.log(document_id);
+
+                                  $.ajax({
+                                    type:'post',
+                                    url:'modalCode.php',
+                                    dataType: "json",
+                                    data: document_id,
+                                    success: function(data){
+                                      //alert('success'+ data.document_name);
+                                      $('#docx_name').val(data.document_name);
+                                      $('#docx_pages').val(data.document_pages);
+                                      $('#docx_price').val(data.document_pricePerPageInPhp);
+                                      $('#document_id').val(data.document_id);
+                                      $("#myModal").modal("toggle");
+                                    }
+                                  });
+                                }
+                                
+                              </script>
                     </div>
                 </div>
             </div>

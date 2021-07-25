@@ -3,6 +3,9 @@
 
     $connection = mysqli_connect("localhost","root","","plvdocx_db");
 
+    $cart_data[][];
+    $_SESSION['cart_data'] = $cart_data;
+
 
     //sign-up redirect
     if(isset($_POST['signup_btn'])){
@@ -139,7 +142,7 @@
 
         var_dump(preg_match($patter, $password_login));
 
-        if(preg_match($pattern, $username_login) === 0 || preg_match($patter, $password_login) === 0){
+        if(preg_match($pattern, $username_login) === 0 || preg_match($pattern, $password_login) === 0){
             if($row){
 
                 $_SESSION['username'] = $username_login;
@@ -167,27 +170,51 @@
         }
     }
 
-    //set document name
-    if(isset($_POST['docCav_btn'])){
-        $_SESSION['document_name'] = "cav";
+    if(isset($_POST['buy_btn'])){
+        if($_POST['document_copies'] == 0){
+            header('Location: studentDocs.php');
+        }
+        $docx_name = $_POST['document_name'];
+        $docx_pages = $_POST['document_pages'];
+        $docx_price = $_POST['document_price'];
+        $docx_copies = $_POST['document_copies'];
+        $docx_totalPrice = $docx_price * $docx_copies;
+        $student_id = $_SESSION['student_id'];
+        $date = date("Y/m/d");
+
+        $query_insertMaster = "INSERT INTO transactionmaster_tbl (student_id, amount_total, transaction_date) 
+                    VALUES ('$student_id', '$docx_totalPrice', '$date')";
+        $query_select = "SELECT * FROM transactionmaster_tbl ORDER BY transaction_id DESC";
+
+        $query_run = mysqli_query($connection, $query_insertMaster);
+        $query_run2 = mysqli_query($connection, $query_select);
+        $row = mysqli_fetch_assoc($query_run2);
+
+        $transaction_id = $row['transaction_id'];
+        $document_id = $_POST['document_id'];
+
+        $query_insertDetailed = "INSERT INTO transactiondetailed_tbl (transactionMaster_id, document_id, document_quantity, document_pages, document_pricePerPage, document_subtotal, transaction_status)
+                    VALUES ('$transaction_id', '$document_id', '$docx_copies', '$docx_pages', '$docx_totalPrice', '$docx_price', 1)";
+        $query_run2 = mysqli_query($connection, $query_insertDetailed);
+
+        if($query_run2){
+            $_SESSION['success'] = "Bought sucessfully!";
+            //header('Location: studentDocs.php');
+        }
+        else{
+            $_SESSION['success'] = "Buy not success!";
+            //header('Location: studentDocs.php');
+        }
     }
 
-    if(isset($_POST['docInc_btn'])){
-        $_SESSION['document_name'] = "inc";
-    }
+    if($_POST['add_btn']{
+        $docx_name = $_POST['document_name'];
+        $docx_pages = $_POST['document_pages'];
+        $docx_price = $_POST['document_price'];
+        $docx_copies = $_POST['document_copies'];
+        $docx_totalPrice = $docx_price * $docx_copies;
 
-    if(isset($_POST['docAbsence_btn'])){
-        $_SESSION['document_name'] = "absence";
-    }
-
-    if(isset($_POST['docTransfer_btn'])){
-        $_SESSION['document_name'] = "transfer";
-    }
-
-    if(isset($_POST['docDiploma_btn'])){
-        $_SESSION['document_name'] = "diploma";
-    }
-    
-
+        array_push($_SESSION['cart_data'][0][]);
+    })
 
 ?>
