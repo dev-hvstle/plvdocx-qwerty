@@ -90,7 +90,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         <button type="submit" name="buy_btn" class="btn btn-primary">Buy</button>
-                                        <button type="submit" name="addCart_btn" class="btn btn-success">Add to cart</button>
+                                        <button type="submit" name="add_btn" class="btn btn-success">Add to cart</button>
                                         <input type="hidden" id="document_id" name="document_id">
                                     </div>
                                     </form>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2021 at 12:59 PM
+-- Generation Time: Jul 31, 2021 at 04:38 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -217,7 +217,15 @@ CREATE TABLE `transactiondetailed_tbl` (
 
 INSERT INTO `transactiondetailed_tbl` (`transactionDetailed_id`, `transactionMaster_id`, `document_id`, `document_quantity`, `document_pages`, `document_pricePerPage`, `document_subtotal`, `transaction_status`) VALUES
 (1, 1, 1, 1, 2, 150, 300, 9),
-(2, 1, 2, 2, 2, 100, 400, 9);
+(2, 1, 2, 2, 2, 100, 400, 9),
+(3, 13, 1, 1, 3, 150, 150, 0),
+(4, 14, 1, 5, 3, 750, 150, 2),
+(5, 15, 0, 2, 3, 300, 150, 1),
+(6, 15, 0, 3, 1, 300, 100, 1),
+(7, 16, 1, 12, 3, 1800, 150, 1),
+(8, 17, 0, 12, 3, 1800, 150, 1),
+(9, 17, 0, 13, 1, 1300, 100, 1),
+(10, 17, 2, 13, 1, 1300, 100, 1);
 
 -- --------------------------------------------------------
 
@@ -231,8 +239,8 @@ CREATE TABLE `transactionmaster_tbl` (
   `employee_id` int(11) NOT NULL,
   `amount_total` int(11) NOT NULL,
   `amount_payment` int(11) NOT NULL,
-  `transaction_date` int(11) NOT NULL,
-  `transaction_dateFinished` int(11) NOT NULL,
+  `transaction_date` datetime NOT NULL,
+  `transaction_dateFinished` datetime NOT NULL,
   `isFinished` int(1) NOT NULL,
   `isCancelled` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -242,7 +250,21 @@ CREATE TABLE `transactionmaster_tbl` (
 --
 
 INSERT INTO `transactionmaster_tbl` (`transaction_id`, `student_id`, `employee_id`, `amount_total`, `amount_payment`, `transaction_date`, `transaction_dateFinished`, `isFinished`, `isCancelled`) VALUES
-(1, 180227, 0, 700, 700, 20210522, 20210522, 0, 1);
+(1, 180227, 0, 700, 700, '2021-05-22 00:00:00', '2021-05-22 00:00:00', 0, 1),
+(4, 180227, 0, 0, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(5, 180227, 0, 0, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(6, 180227, 0, 0, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(7, 180227, 0, 0, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(8, 180227, 0, 150, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(9, 180227, 0, 150, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(10, 180227, 0, 150, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(11, 180227, 0, 150, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(12, 180227, 0, 150, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(13, 180227, 0, 150, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(14, 180227, 0, 750, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(15, 180227, 0, 600, 0, '2021-07-31 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(16, 180227, 0, 1800, 0, '2021-07-31 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(17, 180227, 0, 4400, 0, '2021-07-31 00:00:00', '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -378,13 +400,13 @@ ALTER TABLE `studenttype_tbl`
 -- AUTO_INCREMENT for table `transactiondetailed_tbl`
 --
 ALTER TABLE `transactiondetailed_tbl`
-  MODIFY `transactionDetailed_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `transactionDetailed_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `transactionmaster_tbl`
 --
 ALTER TABLE `transactionmaster_tbl`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `transactionstatus_tbl`
