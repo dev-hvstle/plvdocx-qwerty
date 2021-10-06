@@ -195,7 +195,7 @@
 
         if($query_run2){
             $_SESSION['success'] = "Bought sucessfully!";
-            //header('Location: studentDocs.php');
+            header('Location: studentDocs.php');
         }
         else{
             $_SESSION['success'] = "Buy not success!";
