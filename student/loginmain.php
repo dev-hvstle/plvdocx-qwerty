@@ -28,7 +28,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
+		height: auto;
 		flex-direction: column;
 		background-repeat: no-repeat;
 		background-size: cover;
