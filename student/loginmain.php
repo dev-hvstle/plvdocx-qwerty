@@ -29,7 +29,6 @@
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
-		
 		background-repeat: no-repeat;
 		background-size: cover;
     	background-position: center;
@@ -38,7 +37,7 @@
 
 	form {
 		position: absolute;
-		width: 500px;
+		width: 100vh;
 		border: 2px solid #ccc;
 		padding: 30px;
 		background: #fff;
@@ -127,7 +126,7 @@
 	@media screen and (max-width:500px) {
 		form {
 			position: absolute;
-			width: 500px;
+			width: 300px;
 			border: 2px solid #ccc;
 			padding: 30px;
 			background: #fff;
