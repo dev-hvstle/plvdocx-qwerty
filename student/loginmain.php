@@ -126,7 +126,6 @@
 	@media screen and (max-width:500px) {
 		form {
 			position: absolute;
-			height:50vh;
 			width: 50vh;
 			border: 2px solid #ccc;
 			padding: 5vh;
