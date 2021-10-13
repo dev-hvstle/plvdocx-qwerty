@@ -37,7 +37,7 @@
 
 	form {
 		position: absolute;
-		width: 100vh;
+		width: 50vh;
 		border: 2px solid #ccc;
 		padding: 30px;
 		background: #fff;
