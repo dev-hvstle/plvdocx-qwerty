@@ -27,7 +27,9 @@
 		background-image: url(image/studentBackground.jpg);
 		display: flex;
 		justify-content: center;
-		height: auto;
+		align-items: center;
+		height: 100vh;
+		flex-direction: column;
 		background-repeat: no-repeat;
 		background-size: cover;
     	background-position: center;
