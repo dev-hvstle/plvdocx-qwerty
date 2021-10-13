@@ -29,7 +29,7 @@
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
-		flex-direction: column;
+		
 		background-repeat: no-repeat;
 		background-size: cover;
     	background-position: center;
@@ -135,8 +135,7 @@
 		}
 
 		body{
-			height: 110vh;
-			overflow: hidden;
+			height: 120vh;
 		}
 	}
 
