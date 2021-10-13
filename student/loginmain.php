@@ -28,7 +28,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: auto;
+		height: 100vh;
 		flex-direction: column;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -132,6 +132,10 @@
 			padding: 30px;
 			background: #fff;
 			border-radius: 15px;
+		}
+
+		body{
+			height: 120vh;
 		}
 	}
 
