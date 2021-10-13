@@ -27,9 +27,7 @@
 		background-image: url(image/studentBackground.jpg);
 		display: flex;
 		justify-content: center;
-		align-items: center;
-		height: 100vh;
-		flex-direction: column;
+		height: auto;
 		background-repeat: no-repeat;
 		background-size: cover;
     	background-position: center;
@@ -123,11 +121,23 @@
 		border: solid 2px #3cc3bd;
 		transition: all 0.9s ease;
 	}
+	
+	@media screen and (max-width:500px) {
+		form {
+			position: absolute;
+			width: 500px;
+			border: 2px solid #ccc;
+			padding: 30px;
+			background: #fff;
+			border-radius: 15px;
+		}
+	}
+
 
 	</style>
 </head>
 <body class="particles" id="particles-js">
-     <form action="code.php" method="post">
+     <form action="code.php" method="post" class="formBody">
 	 <div class="plvicon">
 	 	<img src="image/plvdocxicon.png" height= "10vh" class="plvMoto"   alt="">
      	<h2>Log In</h2>
