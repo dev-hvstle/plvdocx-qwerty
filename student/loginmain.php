@@ -23,12 +23,13 @@
 
 	<style>
 
-	body {
-		background-image: url(image/studentBackground.jpg);
+body {
+		background-image: url(img/background.jpg);
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
+		flex-direction: column;
 		background-repeat: no-repeat;
 		background-size: cover;
     	background-position: center;
@@ -37,106 +38,39 @@
 
 	form {
 		position: absolute;
-		width: 50vh;
+		width: 500px;
 		border: 2px solid #ccc;
 		padding: 30px;
 		background: #fff;
-		border-radius: 5px;
-	}
-
-	input {
-		display: block;
-		border: 2px solid #ccc;
-		width: 95%;
-		height: 10%;
-		padding: 5px;
-		font-size: 2vh;
-		border-radius: 2px;
-		margin-top:3%;
-		margin-bottom:3%;
-	}
-
-	label {
-		color: #888;
-		font-size: 18px;
-		padding: 10px;
+		border-radius: 15px;
 	}
 
 	.plvicon{
 		position: relative;
+		left: 40%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		flex-direction: column;
-	}
-
-	.plvicon h2{
-		font-size: 2vh;
-	}
-
-	.plvMoto{
 		height: 10vh;
+		flex-direction: column;	
 	}
 
-	.btnLogin {
-		float: right;
-		background: #3cc3bd;
-		padding: 10px 15px;
-		color: #fff;
-		border-radius: 0px;
-		margin-right: 10px;
-		border: solid 2px #3cc3bd;
+	button {
+	float: right;
+	background: #222d31;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 2px;
+	margin-right: 10px;
+	border: none;
+
+	}
+	button:hover{
+		opacity: .7;
 	}
 
-	.btnLogin:hover{
-		float: right;
-		background: #fff;
-		padding: 10px 15px;
-		color: #000;
-		border-radius: 0px;
-		margin-right: 10px;
-		border: solid 2px #3cc3bd;
-		transition: all 0.9s ease;
-	}
-
-
-	.btnSignUp {
-
-		float: right;
-		background: #fff;
-		padding: 10px 15px;
-		color: #000;
-		border-radius: 0px;
-		margin-right: 10px;
-		border: solid 2px #3cc3bd;
-		
-	}
-
-	.btnSignUp:hover{
-		float: right;
-		background: #3cc3bd;
-		padding: 10px 15px;
-		color: #fff;
-		border-radius: 0px;
-		margin-right: 10px;
-		border: solid 2px #3cc3bd;
-		transition: all 0.9s ease;
-	}
-	
-	@media screen and (max-width:500px) {
-		form {
-			position: absolute;
-			top:40vh;
-			width: 100vw;
-			border: 2px solid #ccc;
-			padding: 5vh;
-			background: #fff;
-			border-radius: 5px;
-		}
-
-		body{
-			height: 120vh;
-		}
+	h2{
+		color: #222d31;
 	}
 
 
