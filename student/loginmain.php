@@ -41,7 +41,7 @@
 		border: 2px solid #ccc;
 		padding: 30px;
 		background: #fff;
-		border-radius: 15px;
+		border-radius: 5px;
 	}
 
 	input {
@@ -128,9 +128,9 @@
 			position: absolute;
 			width: 50vh;
 			border: 2px solid #ccc;
-			padding: 30px;
+			padding: 5vh;
 			background: #fff;
-			border-radius: 15px;
+			border-radius: 5px;
 		}
 
 		body{
