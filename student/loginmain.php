@@ -135,7 +135,8 @@
 		}
 
 		body{
-			height: 120vh;
+			height: 110vh;
+			overflow: hidden;
 		}
 	}
 
