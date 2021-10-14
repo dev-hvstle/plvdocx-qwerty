@@ -188,9 +188,9 @@
 
 		.middlenameInput{
 			position: relative;
-			top: -52vh;
+			top: -50vw;
 			font-size: 18px;
-			height: 8vh;visibility: hidden;
+			height: 8vh;
 		}
 
 		.usernameStudent{
