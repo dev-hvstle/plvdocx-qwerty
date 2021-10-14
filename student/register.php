@@ -177,6 +177,11 @@
 			top:20vh;
 		}
 		
+		.firstnameInput{
+			position: relative;
+			top: 0%;
+		}
+		
     }
   
 
