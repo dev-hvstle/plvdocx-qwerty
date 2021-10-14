@@ -192,6 +192,13 @@
 			font-size: 18px;
 			height: 8vh;
 		}
+
+		.usernameStudent{
+			position: relative;
+			top: 0vh;
+			font-size: 18px;
+			height: 8vh;
+		}
 		
     }
   
@@ -225,7 +232,7 @@
 
 			<input type="email" name="student_email" placeholder="Email" class="email"><br>
 				
-     		<input type="text" name="student_username" placeholder="Username"><br>
+     		<input type="text" name="student_username" placeholder="Username" class="usernameStudent"><br>
 			 	
      		<input type="password" name="student_password" placeholder="Password"><br>
 			
@@ -254,7 +261,7 @@
 				<option value="studentlevel">Student Level</option>
 				<option value="1">College</option>
 				<option value="2">Senior High School</option>
-			</select>
+				</select>
 			</div>
 			<div class="col-sm">
 			
