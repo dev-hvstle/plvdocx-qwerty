@@ -47,7 +47,7 @@
 		
 		top:10vh;
 		width: 60vh;
-		height: 125vh;
+		height: 145vh;
 		border: 2px solid #ccc;
 		padding: 5vh;
 		background: #fff;
@@ -111,7 +111,8 @@
 		position: relative;
 		width: 12vh;
 		background: #3cc3bd;
-		margin:2vh;
+		margin-left:2vh;
+		margin-right:2vh;
 		float: right;
 	}
 
@@ -147,6 +148,18 @@
 		padding: 10px;
 	}
 
+	.inputImage{
+		position: relative;
+		top: 2vh;
+		
+		border: 2px solid #ccc;
+		width: 90%;
+		left:1.5vh;
+		height: 8%;
+		font-size: 18px;
+		border-radius: 2px;
+		padding: 10px;
+	}
 
 
 	@media screen and (max-width: 500px)  {
@@ -155,7 +168,7 @@
 			position: absolute;
 			top:10vh;
 			width: 90vw;
-			height: 290vw;
+			height: 340vw;
 			border: 2px solid #ccc;
 			padding: 5vh;
 			background: #fff;
@@ -272,6 +285,10 @@
 
 			<BR>
 			<BR>
+
+			<input type="file" name="image[]" class="inputImage"/>
+
+			<BR><BR>
 
 			<button type="submit" name="register_btn" data-bs-toggle="modal" data-bs-target="#myModal" class="btnNext">Next</button>
 			</div>
