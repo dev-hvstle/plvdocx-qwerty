@@ -38,10 +38,7 @@
     	background-position: center;
 		
 	}
-
-
 	
-
 	.btnSignUp {
 		float: right;
 		background: #3cc3bd;
@@ -149,6 +146,7 @@
 
 	@media screen and (max-width: 500px)  {
 		form {
+
 			position: absolute;
 			top:10vh;
 			width: 50vh;
@@ -157,20 +155,27 @@
 			padding: 5vh;
 			background: #fff;
 			border-radius: 3px;
+
 		}
 
 		body {
-		background-image: url(image/studentBackground.jpg);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 190vh;
-		flex-direction: column;
-		background-repeat: no-repeat;
-		background-size: cover;
-    	background-position: center;
-		
-	}
+
+			background-image: url(image/studentBackground.jpg);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 190vh;
+			flex-direction: column;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			
+		}
+
+		.email{
+			position: relative;
+			top:20vh;
+		}
 		
     }
   
@@ -202,7 +207,7 @@
 		
      		<input type="text" name="student_ln" placeholder="Last Name"><br>
 
-			<input type="email" name="student_email" placeholder="Email"><br>
+			<input type="email" name="student_email" placeholder="Email" class="email"><br>
 				
      		<input type="text" name="student_username" placeholder="Username"><br>
 			 	
