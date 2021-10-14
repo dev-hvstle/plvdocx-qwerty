@@ -36,7 +36,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
     	background-position: center;
-		overflow: hidden;
+		
 	}
 
 
@@ -157,6 +157,7 @@
 			background: #fff;
 			border-radius: 3px;
 		}
+		
     }
   
 
