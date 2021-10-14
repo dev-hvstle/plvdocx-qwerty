@@ -181,7 +181,7 @@
 		
 		.firstnameInput{
 			position: relative;
-			top: 0%;
+			top: -20%;
 		}
 		
     }
