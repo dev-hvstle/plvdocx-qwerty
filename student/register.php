@@ -31,7 +31,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 190vh;
+		height: 100vh;
 		flex-direction: column;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -158,6 +158,19 @@
 			background: #fff;
 			border-radius: 3px;
 		}
+
+		body {
+		background-image: url(image/studentBackground.jpg);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 190vh;
+		flex-direction: column;
+		background-repeat: no-repeat;
+		background-size: cover;
+    	background-position: center;
+		
+	}
 		
     }
   
