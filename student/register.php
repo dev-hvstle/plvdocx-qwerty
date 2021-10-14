@@ -182,6 +182,7 @@
 		.firstnameInput{
 			position: relative;
 			top: -30vh;
+			font-size: 18px;
 		}
 		
     }
