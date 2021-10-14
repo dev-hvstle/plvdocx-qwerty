@@ -151,7 +151,7 @@
 		form {
 			position: absolute;
 			width: 50vh;
-			height: 105vh;
+			height: 145vh;
 			border: 2px solid #ccc;
 			padding: 30px;
 			background: #fff;
