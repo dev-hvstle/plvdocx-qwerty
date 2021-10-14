@@ -176,7 +176,7 @@
 
 		.email{
 			position: relative;
-			top:20vh;
+			top:20vh;visibility: hidden;
 		}
 		
 		.firstnameInput{
@@ -190,14 +190,14 @@
 			position: relative;
 			top: -52vh;
 			font-size: 18px;
-			height: 8vh;
+			height: 8vh;visibility: hidden;
 		}
 
 		.usernameStudent{
 			position: relative;
 			top: 0vh;
 			font-size: 18px;
-			height: 8vh;
+			height: 8vh;visibility: hidden;
 		}
 		
     }
