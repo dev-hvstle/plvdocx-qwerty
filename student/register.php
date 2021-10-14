@@ -31,7 +31,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 160vh;
+		height: 190vh;
 		flex-direction: column;
 		background-repeat: no-repeat;
 		background-size: cover;
