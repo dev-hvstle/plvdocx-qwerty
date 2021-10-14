@@ -150,10 +150,11 @@
 	@media screen and (max-width: 500px)  {
 		form {
 			position: absolute;
+			top:20vh;
 			width: 50vh;
 			height: 165vh;
 			border: 2px solid #ccc;
-			padding: 30px;
+			padding: 5vh;
 			background: #fff;
 			border-radius: 3px;
 		}
