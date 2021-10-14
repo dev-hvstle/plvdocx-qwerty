@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="css/style-login.css">
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel = "icon" 
         href ="image/plvdocxicon.png" 
@@ -31,46 +32,34 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
+		height: 190vh;
 		flex-direction: column;
 		background-repeat: no-repeat;
 		background-size: cover;
     	background-position: center;
-		overflow: hidden;
+		
 	}
-
-
 	
-
-	.btnSignUp {
-		float: right;
-		background: #3cc3bd;
-		padding: 10px 15px;
-		color: #fff;
-		border-radius: 0px;
-		margin-right: 10px;
-		border: solid 2px #3cc3bd;
-	}
-
-	.btnSignUp:hover{
-		float: right;
-		background: #fff;
-		padding: 10px 15px;
-		color: #000;
-		border-radius: 0px;
-		margin-right: 10px;
-		border: solid 2px #3cc3bd;
-		transition: all 0.9s ease;
-	}
+	
 
 	form {
 		position: absolute;
-		width: 100vh;
-		height: 75vh;
+		
+		top:10vh;
+		width: 60vh;
+		height: 145vh;
 		border: 2px solid #ccc;
-		padding: 30px;
+		padding: 5vh;
 		background: #fff;
 		border-radius: 3px;
+	}
+
+	.container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width:40vh;
+		
 	}
 
 	
@@ -91,72 +80,151 @@
 		height: 10vh;
 	}
 
-	input {
-		display: block;
-		border: 2px solid #ccc;
-		width: 95%;
-		height: 15%;
-		font-size: 18px;
-		border-radius: 2px;
-		padding: 10px;
-	}
+	
 	
 
 	.firstnamelbl{
 		position: relative;
 		top: 24%;
+		
 	}
 
 	.firstnameInput{
 		position: relative;
-		top: 21%;
+		
 	}
 	
 	
 	.passwordInput{
 		position: relative;
-		top: 63.5%;
+	
 	}
 
 	.middlenameInput{
 		position: relative;
-		top: 21%;
+		
+	}
+
+	
+
+	.btnNext{
+		position: relative;
+		width: 12vh;
+		background: #3cc3bd;
+		margin-left:2vh;
+		margin-right:2vh;
+		float: right;
+	}
+
+	
+	input {
+		position: relative;
+		border: 2px solid #ccc;
+		width: 90%;
+		left:1.5vh;
+		height: 10%;
+		font-size: 18px;
+		border-radius: 2px;
+		padding: 10px;
 	}
 
 	.studenttype{
 		font-size: 14px;
-		height: 15%;
-		width: 95%;
-		padding-left: 8px;
+		height: 10%;
+		width: 90%;
+		left:1.5vh;
+		position: relative;
+		
 		padding: 10px;
 	}
 
 	.student_level{
 		font-size: 14px;
-		height: 15%;
-		width: 95%;
+		height: 10%;
+		width: 90%;
+		left:1.5vh;
 		position: relative;
-		top: 63%;
+		top:2vh;
 		padding: 10px;
 	}
 
-	.btnNext{
+	.inputImage{
 		position: relative;
-		top: 40vh;
-		width: 10vh;
-		background: #3cc3bd;
+		top: 2vh;
+		
+		border: 2px solid #ccc;
+		width: 90%;
+		left:1.5vh;
+		height: 8%;
+		font-size: 18px;
+		border-radius: 2px;
+		padding: 10px;
 	}
+
 
 	@media screen and (max-width: 500px)  {
 		form {
+
 			position: absolute;
-			width: 50vh;
-			height: 105vh;
+			top:10vh;
+			width: 90vw;
+			height: 340vw;
 			border: 2px solid #ccc;
-			padding: 30px;
+			padding: 5vh;
 			background: #fff;
 			border-radius: 3px;
+
 		}
+
+		body {
+
+			background-image: url(image/studentBackground.jpg);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 190vh;
+			flex-direction: column;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			
+		}
+
+		input {
+		position: relative;
+		border: 2px solid #ccc;
+		width: 90%;
+		left:1.5vh;
+		height: 8%;
+		font-size: 18px;
+		border-radius: 2px;
+		padding: 10px;
+	}
+
+	.studenttype{
+		font-size: 14px;
+		height: 8%;
+		width: 90%;
+		left:1.5vh;
+		position: relative;
+		
+		padding: 10px;
+	}
+
+	.student_level{
+		font-size: 14px;
+		height: 8%;
+		width: 90%;
+		left:1.5vh;
+		position: relative;
+		top:2vh;
+		padding: 10px;
+	}
+
+		
+
+	
+		
     }
   
 
@@ -187,11 +255,17 @@
 		
      		<input type="text" name="student_ln" placeholder="Last Name"><br>
 
-			<input type="email" name="student_email" placeholder="Email"><br>
+			<input type="firstname" name="student_fn" class="firstnameInput" placeholder="First Name"><br>
+
+			<input type="middlename" name="student_mn" class="middlenameInput" placeholder="Middle Name"><br>
+
+			<input type="email" name="student_email" placeholder="Email" class="email"><br>
 				
-     		<input type="text" name="student_username" placeholder="Username"><br>
+     		<input type="text" name="student_username" placeholder="Username" class="usernameStudent"><br>
 			 	
-     		<input type="password" name="student_password" placeholder="Password"><br>
+     		<input type="password" name="student_password" placeholder="Password" class="passwordStudent"><br>
+
+			<input type="password" name="confirm_password" class="passwordInput" placeholder="Confirm Password"><br>
 			
 			
 
@@ -203,30 +277,28 @@
 				<option value="4">Drop Out/Transferred</option>
 			</select>
 
-			<BR>
-			<BR>
-			</div>
-			<div class="col-sm">
-
-				
-
-     			<input type="firstname" name="student_fn" class="firstnameInput" placeholder="First Name"><br>
-
-				<input type="password" name="confirm_password" class="passwordInput" placeholder="Confirm Password"><br>
-		
-				<select name="student_level" class="student_level">
+			<select name="student_level" class="student_level">
 				<option value="studentlevel">Student Level</option>
 				<option value="1">College</option>
 				<option value="2">Senior High School</option>
 			</select>
+
+			<BR>
+			<BR>
+
+			<input type="file" name="image[]" class="inputImage"/>
+
+			<BR><BR>
+
+			<button type="submit" name="register_btn" data-bs-toggle="modal" data-bs-target="#myModal" class="btnNext">Next</button>
 			</div>
-			<div class="col-sm">
 			
-     			<input type="middlename" name="student_mn" class="middlenameInput" placeholder="Middle Name"><br>
+			
+     			
 				
 				
 
-				<button type="submit" name="register_btn" data-bs-toggle="modal" data-bs-target="#myModal" class="btnNext">Next</button>
+				
 
 			</div>
 		</div>

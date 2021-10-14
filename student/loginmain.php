@@ -29,7 +29,6 @@
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
-		flex-direction: column;
 		background-repeat: no-repeat;
 		background-size: cover;
     	background-position: center;
@@ -38,11 +37,11 @@
 
 	form {
 		position: absolute;
-		width: 500px;
+		width: 50vh;
 		border: 2px solid #ccc;
 		padding: 30px;
 		background: #fff;
-		border-radius: 15px;
+		border-radius: 5px;
 	}
 
 	input {
@@ -123,11 +122,28 @@
 		border: solid 2px #3cc3bd;
 		transition: all 0.9s ease;
 	}
+	
+	@media screen and (max-width:500px) {
+		form {
+			position: absolute;
+			top:20vh;
+			width: 100vw;
+			border: 2px solid #ccc;
+			padding: 5vh;
+			background: #fff;
+			border-radius: 5px;
+		}
+
+		body{
+			height: 120vh;
+		}
+	}
+
 
 	</style>
 </head>
 <body class="particles" id="particles-js">
-     <form action="code.php" method="post">
+     <form action="code.php" method="post" class="formBody">
 	 <div class="plvicon">
 	 	<img src="image/plvdocxicon.png" height= "10vh" class="plvMoto"   alt="">
      	<h2>Log In</h2>
