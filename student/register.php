@@ -88,15 +88,7 @@
 		height: 10vh;
 	}
 
-	input {
-		display: block;
-		border: 2px solid #ccc;
-		width: 95%;
-		height: 15%;
-		font-size: 18px;
-		border-radius: 2px;
-		padding: 10px;
-	}
+	
 	
 
 	.firstnamelbl{
@@ -142,6 +134,16 @@
 		top: 40vh;
 		width: 10vh;
 		background: #3cc3bd;
+	}
+
+	input {
+		display: block;
+		border: 2px solid #ccc;
+		width: 95%;
+		height: 15%;
+		font-size: 18px;
+		border-radius: 2px;
+		padding: 10px;
 	}
 
 	@media screen and (max-width: 500px)  {
