@@ -17,6 +17,20 @@
     type = "image/x-icon">
     
     <title>PLV Docx</title>
+    <style>
+    .badge {
+        position: relative;
+        right: 30px;
+        top: -1vh;
+        color: #fff;
+    }
+
+    .link-textCustom-Notif{
+        position: relative;
+        right: 1.6vh;
+        top:1vh;
+    }
+  </style>
   </head>
   
   <body>
