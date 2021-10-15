@@ -39,7 +39,7 @@
                     <div class="table-container">
                         <?php
                             $student_id = $_SESSION['student_id']; 
-                            $connection = mysqli_connect("localhost","root","","plvdocx_db");
+                            $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
                             $query = "SELECT  *
                     
                                               from transactiondetailed_tbl 
@@ -115,7 +115,7 @@
             <div class="table-container">
                         <?php
                             $student_id = $_SESSION['student_id']; 
-                            $connection = mysqli_connect("localhost","root","","plvdocx_db");
+                            $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
                             $query = "SELECT  *
                     
                                               FROM transactiondetailed_tbl 
@@ -184,7 +184,7 @@
                     <div class="table-container">
                     <?php
                             $student_id = $_SESSION['student_id']; 
-                            $connection = mysqli_connect("localhost","root","","plvdocx_db");
+                            $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
                             $query = "SELECT  *
                     
                                               FROM transactiondetailed_tbl 
@@ -251,7 +251,7 @@
                     <div class="table-container">
                     <?php
                             $student_id = $_SESSION['student_id']; 
-                            $connection = mysqli_connect("localhost","root","","plvdocx_db");
+                            $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
                             $query = "SELECT  *
                     
                                               FROM transactiondetailed_tbl 
@@ -313,7 +313,7 @@
                 <div class="table-container">
                 <?php
                             $student_id = $_SESSION['student_id']; 
-                            $connection = mysqli_connect("localhost","root","","plvdocx_db");
+                            $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
                             $query = "SELECT  *
                     
                                               FROM transactiondetailed_tbl 
@@ -381,7 +381,7 @@
             <div class="table-container">
                         <?php
                             $student_id = $_SESSION['student_id']; 
-                            $connection = mysqli_connect("localhost","root","","plvdocx_db");
+                            $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
                             $query = "SELECT  *
                     
                                               FROM transactiondetailed_tbl 

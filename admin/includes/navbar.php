@@ -97,7 +97,7 @@
 <!-- Nav Item - Tables -->
 
 <li class="nav-item">
-    <a class="nav-link" href="Documents.php">
+    <a class="nav-link" href="documents.php">
         <i class="fas fa-fw fa-file"></i>
         <span>Documents</span></a>
 </li>

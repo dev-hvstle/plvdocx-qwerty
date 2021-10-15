@@ -129,7 +129,7 @@ include('includes/navbar.php');
         
     <?php 
     
-        $connection = mysqli_connect("localhost","root","","plvdocx_db");
+        $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
         $query = "SELECT  employeeType_name, 
                           employee_id, 
                           employee_ln,

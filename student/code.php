@@ -1,7 +1,7 @@
 <?php
     include('security.php');
 
-    $connection = mysqli_connect("localhost","root","","plvdocx_db");
+    $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
 
     //sign-up redirect
     if(isset($_POST['signup_btn'])){
@@ -25,34 +25,61 @@
         $student_isMale = 1;
         $pattern = '/[\\\\\.\+\*\?\^\$\[\]\(\)\{\}\/\'\#\:\!\=\|]/';
 
+        $fileName = $_FILES['image']['name'];
+        $fileTmpName = $_FILES['image']['tmp_name'];
+        $fileSize = $_FILES['image']['size'];
+        $fileError = $_FILES['image']['error'];
+        $fileType = $_FILES['image']['type'];
 
+        $fileExt = explode('.', $fileName);
+        $fileActualExt = strtolower(end($fileExt));
+        $allowed = array('jpeg','jpg','png');
 
+        //checks for student id, name, password, and email
         if($student_id === "" || $student_fn === "" || $student_ln === "" || $student_username === "" || $student_password === "" || $student_email === ""){
             $_SESSION['status'] = "Some Fields Are Missing.";
             header('Location: register.php');
         }
+        //checks for student type and level
         else if($student_type == "studenttype" || $student_level == "studentlevel"){
             $_SESSION['status'] = "Student Type or Student Level isn't correctly set";
             header('Location: register.php');
         }
+        //checks for student ID
         else if(strlen((string)$student_id) < 6){
             $_SESSION['status'] = "Student ID is not valid";
             header('Location: register.php');
         }
+        //checks if passwords matches
         else if(preg_match($pattern, $student_password) && preg_match($pattern, $student_username)){
             $_SESSION['status'] = "Special Characters Aren't Allowed";
             header('Location: register.php');
         }
+        //check image extension
+        else if(!(in_array($fileActualExt, $allowed))){
+            $_SESSION['status'] = "Uploaded invalid file type.";
+            header('Location: register.php');
+        }
+        else if($fileError !== 0){
+            $_SESSION['status'] = "There was an error when uploading the image";
+            header('Location: register.php');
+        }
+        //commits student data to database
         else{
             if($student_password === $confirm_password && $student_password != null && $confirm_password != null)
             {
-                $query = "INSERT INTO student_tbl (student_id ,student_fn, student_mn, student_ln, student_type, student_email, student_username, student_password, student_level, isActive, student_isMale) 
-                          VALUES ('$student_id','$student_fn','$student_mn','$student_ln', '$student_type', '$student_email', '$student_username', '$student_password', '$student_level', '$isActive', '$student_isMale')";
+                $photoName = uniqid('',true).".".$fileActualExt;
+                $photoDestination = 'photos/'.$photoName;
+                
+
+                $query = "INSERT INTO student_tbl (student_id ,student_fn, student_mn, student_ln, student_type, student_email, student_username, student_password, student_level, student_photo, isActive, student_isMale) 
+                          VALUES ('$student_id','$student_fn','$student_mn','$student_ln', '$student_type', '$student_email', '$student_username', '$student_password', '$student_level', '$photoDestination', '$isActive', '$student_isMale')";
                 $query_run = mysqli_query($connection, $query);
     
                 if($query_run)
                 {
                     // echo "Saved";
+                    move_uploaded_file($fileTmpName, $photoDestination);
                     $_SESSION['success'] = "Admin Profile Added";
                     header('Location: loginmain.php');
                 }
@@ -190,7 +217,7 @@
         $document_id = $_POST['document_id'];
 
         $query_insertDetailed = "INSERT INTO transactiondetailed_tbl (transactionMaster_id, document_id, document_quantity, document_pages, document_pricePerPage, document_subtotal, transaction_status)
-                    VALUES ('$transaction_id', '$document_id', '$docx_copies', '$docx_pages', '$docx_totalPrice', '$docx_price', 1)";
+                    VALUES ('$transaction_id', '$document_id', '$docx_copies', '$docx_pages', '$docx_price', '$docx_totalPrice', 1)";
         $query_run2 = mysqli_query($connection, $query_insertDetailed);
 
         if($query_run2){
@@ -253,4 +280,10 @@
         header('Location: studentDocs.php');
     }
 
+    if(isset($_POST['test_btn'])){
+        foreach($_POST as $key => $value){
+            $_SESSION['result'] .= $key . " " . $value;
+        }
+        header('Location: test.php');
+    }
 ?>

@@ -233,14 +233,14 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body class="particles" id="particles-js">
-     <form action="code.php" method="post">
+     <form action="code.php" method="post" enctype="multipart/form-data">
 	 <div class="plvicon">
 	 	<img src="image/plvdocxicon.png" height= "10vh" class="plvMoto"   alt="">
      	<h2>Create your PLV Docx Account</h2>
 		
 		<?php
            if(isset($_SESSION['status']) && $_SESSION['status'] !=''){
-            	echo '<h2 class="bg.danger text-black"> '.$_SESSION['status'].' </h2>';
+            	echo '<h2 class="bg.danger text-red"> '.$_SESSION['status'].' </h2>';
                unset($_SESSION['status']);
             }
         ?>
@@ -286,7 +286,7 @@
 			<BR>
 			<BR>
 
-			<input type="file" name="image[]" class="inputImage"/>
+			<input type="file" name="image" class="inputImage"/>
 
 			<BR><BR>
 

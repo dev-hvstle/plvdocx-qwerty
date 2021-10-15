@@ -86,7 +86,7 @@ include('includes/navbar.php');
         
     <?php 
     
-        $connection = mysqli_connect("localhost","root","","plvdocx_db");
+        $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
         $query = "SELECT  *
                           from transactionmaster_tbl
 

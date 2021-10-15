@@ -37,7 +37,7 @@ include('includes/navbar.php');
         
     <?php 
     
-        $connection = mysqli_connect("localhost","root","","plvdocx_db");
+        $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
         $query = "SELECT  *
                           from transactiondetailed_tbl
 
@@ -45,7 +45,7 @@ include('includes/navbar.php');
                            on transactiondetailed_tbl.transactionMaster_id = transactionmaster_tbl.transaction_id
 
                            INNER JOIN document_tbl
-                           ON transactiondetailed_tbl.document_id = document_tbl.document_id
+                           ON transactiondetailed_tbl.document_id = document_tbl.document_name
 
                           where transaction_status = 1;
         ";

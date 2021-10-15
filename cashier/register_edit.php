@@ -13,7 +13,7 @@
 
         <div class="card-body">
             <?php 
-                $connection = mysqli_connect("localhost","root","","plvdocx_db");
+                $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
                 if(isset($_POST['edit_btn'])){
                     $id = $_POST['edit_id'];
             
