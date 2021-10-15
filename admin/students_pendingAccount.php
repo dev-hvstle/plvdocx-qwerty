@@ -50,6 +50,24 @@ include('includes/navbar.php');
     
     ?>
 
+            <div class="modal fade" id="myCertificates">
+
+            <div class="modal-dialog">
+            
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1>Certificates</h1>
+                </div>
+
+            <form action="documentcode.php" method="POST">
+                <div class="modal-body">
+
+                    <img src="image/culmulativegpa.png" class="imgsize">
+
+                </form>
+
+            </div>
+    
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr class="text-center">
@@ -71,11 +89,28 @@ include('includes/navbar.php');
                     <td><?php echo $row['transactionMaster_id']; ?></td>
                     <td><?php echo $row['document_id']; ?></td>
                     <td><?php echo $row['document_subtotal']; ?></td>
-                   
+                    
+                    <td> 
+                    <div class="row">
+                        <div class="d-flex justify-content-around">
+                       
+                       <!-- button for image -->
+                       <form action="status_topay_code.php" method="post">
+                            <input type="hidden" name="transactionDetailed_id" value="<?php echo $row['transactionDetailed_id']; ?>">
+                            <button type="submit" name="img_btn" data-bs-toggle="modal" data-bs-target="#myCertificates" class="btn btn-primary">Image</button>
+                        </form>    
+
+                        </div>
+                    </div>
+                         
+
+                    </td>
+
                     <td>
 
                     <div class="row">
                         <div class="d-flex justify-content-around">
+                       
                         <!-- Function Update Status -->
                         <form action="status_topay_code.php" method="post">
                             <input type="hidden" name="transactionDetailed_id" value="<?php echo $row['transactionDetailed_id']; ?>">
