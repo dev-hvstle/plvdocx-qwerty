@@ -41,6 +41,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="register.php">Staff</a>
             <a class="collapse-item" href="student.php">Students</a>
+            <a class="collapse-item" href="students_pendingAccount.php">Pending Accounts</a>
         </div>
     </div>
 </li>
