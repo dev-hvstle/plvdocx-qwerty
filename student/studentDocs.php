@@ -6,17 +6,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="js/app.js"></script>
     <link rel="stylesheet" href="css/studentDocs.css" />
+    
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
       rel="stylesheet"
     />
-
+  
     <link rel = "icon" 
     href ="img/plvdocxicon.png" 
     type = "image/x-icon">
 
     <title>PLV Docx</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <style>
+ 
+  </style>
+  <style>
+    .badge {
+        position: relative;
+        right: 30px;
+        top: -1vh;
+        color: #fff;
+    }
+
+    .link-textCustom-Notif{
+        position: relative;
+        right: 1.6vh;
+        top:1vh;
+    }
+  </style>
   </head>
   
   <body>
@@ -25,6 +43,13 @@
       include('security.php');
       include('includes/navbar.php');
     ?>
+
+    <div class="secondNav">
+      <ul>
+        <li style="float:left"><a href="#about"> <img src="image/plvdocxiconleft.png" class="plvicon"></a></li>
+      </ul>
+    </div>
+    
   
     <main>
       <?php 
