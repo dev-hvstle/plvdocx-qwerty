@@ -1,7 +1,7 @@
 <?php
     include('security.php');
 
-    $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
+    $connection = mysqli_connect("localhost","root","","plvdocx_db");
 
     //register admin function
     if(isset($_POST['add_document']))

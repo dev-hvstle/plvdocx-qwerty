@@ -85,7 +85,7 @@ include('includes/navbar.php');
         
     <?php 
     
-        $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
+        $connection = mysqli_connect("localhost","root","","plvdocx_db");
         $query = "SELECT  document_id,
                           document_name,
                           document_pricePerPageInPhp,

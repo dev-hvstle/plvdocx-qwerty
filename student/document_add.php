@@ -128,7 +128,7 @@ include('includes/navbar.php');
         
     <?php 
     
-        $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
+        $connection = mysqli_connect("localhost","root","","plvdocx_db");
         $query = "SELECT  student_id, 
                           student_fn, 
                           student_mn,

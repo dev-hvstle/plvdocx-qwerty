@@ -101,7 +101,7 @@
                                 
                             <?php 
                                 $studentID = $_SESSION['student_id'];
-                                $connection = mysqli_connect("localhost","plvdocx","plvdocxadmin","plvdocx_db");
+                                $connection = mysqli_connect("localhost","root","","plvdocx_db");
                                 $query = "SELECT 
                                                 *
 
