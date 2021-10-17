@@ -71,7 +71,7 @@ include('includes/navbar.php');
                 <tr class="text-center">
                     <td><?php echo $row['transactionMaster_id']; ?></td>
                     <td><?php echo $row['document_id']; ?></td>
-                    <td><?php echo $row['document_subtotal']; ?></td>
+            
 
                     <td>
 
