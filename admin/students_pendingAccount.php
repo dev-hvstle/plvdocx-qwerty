@@ -50,31 +50,15 @@ include('includes/navbar.php');
     
     ?>
 
-            <div class="modal fade" id="myCertificates">
-
-            <div class="modal-dialog">
-            
-            <div class="modal-content">
-                <div class="modal-header">
-                <h1>Certificates</h1>
-                </div>
-
-            <form action="documentcode.php" method="POST">
-                <div class="modal-body">
-
-                    <img src="image/culmulativegpa.png" class="imgsize">
-
-                </form>
-
-            </div>
     
+
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr class="text-center">
             <th> Student ID </th>
             <th> Student Name </th>
             <th> Actions </th>
-            <th> Manage </th>
+            <th>Manage</th>
           </tr>
         </thead>
         <tbody>
@@ -85,32 +69,29 @@ include('includes/navbar.php');
                     ?>
 
                 <tr class="text-center">
-                    <td><?php echo $row['transactionDetailed_id']; ?></td>
                     <td><?php echo $row['transactionMaster_id']; ?></td>
                     <td><?php echo $row['document_id']; ?></td>
                     <td><?php echo $row['document_subtotal']; ?></td>
-                    
-                    <td> 
-                    <div class="row">
-                        <div class="d-flex justify-content-around">
-                       
-                       <!-- button for image -->
-                       <form action="status_topay_code.php" method="post">
-                            <input type="hidden" name="transactionDetailed_id" value="<?php echo $row['transactionDetailed_id']; ?>">
-                            <button type="submit" name="img_btn" data-bs-toggle="modal" data-bs-target="#myCertificates" class="btn btn-primary">Image</button>
-                        </form>    
-
-                        </div>
-                    </div>
-                         
-
-                    </td>
 
                     <td>
 
                     <div class="row">
                         <div class="d-flex justify-content-around">
-                       
+                        <!-- Function Update Status -->
+                        <form action="status_topay_code.php" method="post">
+                            <input type="hidden" name="transactionDetailed_id" value="<?php echo $row['transactionDetailed_id']; ?>">
+                            <button type="submit" name="done_btn" data-bs-toggle="modal" data-bs-target="#myCertificates" class="btn btn-primary">Done</button>
+                        </form>    
+
+                        </div>
+                    </div>
+
+                    </td>
+                   
+                    <td>
+
+                    <div class="row">
+                        <div class="d-flex justify-content-around">
                         <!-- Function Update Status -->
                         <form action="status_topay_code.php" method="post">
                             <input type="hidden" name="transactionDetailed_id" value="<?php echo $row['transactionDetailed_id']; ?>">
@@ -136,6 +117,53 @@ include('includes/navbar.php');
 
     </div>
   </div>
+</div>
+
+<div class="modal fade" id="myCertificates">
+
+<div class="modal-dialog">
+  
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1>Certificates</h1>
+    </div>
+
+  <form action="documentcode.php" method="POST">
+    <div class="modal-body">
+
+      <!-- Document Name -->
+      <div class="form-group">
+          <label> Document Name </label>
+          <input type="text" name="student_id" class="form-control" placeholder="Document Name" disabled> 
+      </div>
+
+      <!-- Number of pages per copy -->
+      <div class="form-group">
+          <label> Number of pages per copy </label>
+          <input type="text" name="student_fn" class="form-control" placeholder="Number of pages per copy" disabled>
+      </div>
+
+      <!-- Price Per Page -->
+      <div class="form-group">
+          <label>Price Per Page</label>
+          <input type="text" name="student_mn" class="form-control" placeholder="Price Per Page" disabled>
+      </div>
+
+      <!-- Number of copies -->
+      <div class="form-group">
+          <label>Number of copies</label>
+          <input type="text" name="student_ln" class="form-control" placeholder="Number of copies">
+      </div>
+     
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+
+  </div>
+
 </div>
 
 
