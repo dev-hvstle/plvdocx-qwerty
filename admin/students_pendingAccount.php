@@ -80,7 +80,7 @@ include('includes/navbar.php');
                         <!-- Function View Student ID -->
                         
                             
-                            <button type="submit" name="view_btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Verify</button>
+                            <button type="submit" name="view_btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View</button>
                             
                             <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
