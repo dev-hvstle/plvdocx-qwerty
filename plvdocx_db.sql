@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2021 at 04:38 PM
+-- Generation Time: Oct 18, 2021 at 09:05 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -90,7 +90,7 @@ INSERT INTO `employee_tbl` (`employee_id`, `employee_fn`, `employee_mn`, `employ
 (0, 'Harvey', 'Sanchez', 'Resurreccion', 1, '', 'rezsolutions', 'admin', 1, 0),
 (1, 'Vince', '', 'Lucas', 2, '', 'irving', 'lucas', 1, 1),
 (2, 'Kier', '', 'Uychutin', 3, '', 'kier', 'admin', 0, 1),
-(3, 'Almiras', '', 'Pusing', 1, '', '', '', 1, 0);
+(3, 'Almiras', '', 'Pusing', 1, '', 'mira', 'admin', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -111,17 +111,59 @@ CREATE TABLE `notificationstudent_tbl` (
 --
 
 INSERT INTO `notificationstudent_tbl` (`notificationStudent_id`, `student_id`, `notificationStudent_description`, `notificationStudent_isSeen`, `notificationStudent_date`) VALUES
-(1, 180227, 'TEST', 0, '2021-06-08'),
+(1, 180227, 'TEST', 1, '2021-06-08'),
 (2, 0, 'The Registrar is now processing your request.', 0, '2021-06-09'),
 (3, 0, 'The Registrar is now processing your request.', 0, '2021-06-09'),
-(4, 180227, 'The Registrar is now processing your request.', 0, '2021-06-09'),
-(5, 180227, 'The Registrar is now processing your requestTOR', 0, '2021-06-09'),
-(6, 180227, 'The Registrar is now processing your document TOR', 0, '2021-06-09'),
-(7, 180227, 'Your requested document (TOR)is now being printed', 0, '2021-06-09'),
-(8, 180227, 'Your requested document (TOR) is now being signed', 0, '2021-06-09'),
-(9, 180227, 'Your requested document (TOR) is now being signed', 0, '2021-06-09'),
-(10, 180227, 'Your requested document (TOR) is now ready to be released.', 0, '2021-06-09'),
-(11, 180227, 'Your requested document (TOR) was released successfully.', 0, '2021-06-09');
+(4, 180227, 'The Registrar is now processing your request.', 1, '2021-06-09'),
+(5, 180227, 'The Registrar is now processing your requestTOR', 1, '2021-06-09'),
+(6, 180227, 'The Registrar is now processing your document TOR', 1, '2021-06-09'),
+(7, 180227, 'Your requested document (TOR)is now being printed', 1, '2021-06-09'),
+(8, 180227, 'Your requested document (TOR) is now being signed', 1, '2021-06-09'),
+(9, 180227, 'Your requested document (TOR) is now being signed', 1, '2021-06-09'),
+(10, 180227, 'Your requested document (TOR) is now ready to be released.', 1, '2021-06-09'),
+(11, 180227, 'Your requested document (TOR) was released successfully.', 1, '2021-06-09'),
+(12, 180227, 'The Registrar is now processing your document CAV', 1, '2021-08-03'),
+(13, 180227, 'The Registrar is now processing your document CAV', 1, '2021-08-03'),
+(14, 180227, 'The Registrar is now processing your document COR', 1, '2021-08-03'),
+(15, 180227, 'Your requested document (CAV)is now being printed', 1, '2021-08-03'),
+(16, 180227, 'Your requested document (CAV)is now being printed', 1, '2021-08-03'),
+(17, 180227, 'Your requested document (CAV)is now being printed', 1, '2021-08-03'),
+(18, 180227, 'Your requested document (COR)is now being printed', 1, '2021-08-03'),
+(19, 180227, 'Your requested document (CAV) is now being stamped', 1, '2021-08-03'),
+(20, 180227, 'Your requested document (CAV) is now being stamped', 1, '2021-08-03'),
+(21, 180227, 'Your requested document (COR) is now being stamped', 1, '2021-08-03'),
+(22, 180227, 'Your requested document (CAV) is now being stamped', 1, '2021-08-03'),
+(23, 180227, 'Your requested document (CAV) is now being signed', 1, '2021-08-03'),
+(24, 180227, 'Your requested document (CAV) is now being signed', 1, '2021-08-03'),
+(25, 180227, 'Your requested document (COR) is now being signed', 1, '2021-08-03'),
+(26, 180227, 'Your requested document (CAV) is now being signed', 1, '2021-08-03'),
+(27, 180227, 'Your requested document (CAV) is now ready to be released.', 1, '2021-08-03'),
+(28, 180227, 'Your requested document (CAV) is now ready to be released.', 1, '2021-08-03'),
+(29, 180227, 'Your requested document (COR) is now ready to be released.', 1, '2021-08-03'),
+(30, 180227, 'Your requested document (CAV) is now ready to be released.', 1, '2021-08-03'),
+(31, 180227, 'Your requested document (CAV) was released successfully.', 1, '2021-08-03'),
+(32, 180227, 'Your requested document (CAV) was released successfully.', 1, '2021-08-03'),
+(33, 180227, 'Your requested document (COR) was released successfully.', 1, '2021-08-03'),
+(34, 180227, 'Your requested document (CAV) was released successfully.', 1, '2021-08-03'),
+(35, 180299, 'The Registrar is now processing your document CAV', 0, '2021-08-03'),
+(36, 180299, 'Your requested document (CAV)is now being printed', 0, '2021-08-03'),
+(37, 180299, 'Your requested document (CAV) is now being stamped', 0, '2021-08-03'),
+(38, 180299, 'Your requested document (CAV) is now being signed', 0, '2021-08-03'),
+(39, 180299, 'Your requested document (CAV) is now ready to be released.', 0, '2021-08-03'),
+(40, 180299, 'Your requested document (CAV) was released successfully.', 0, '2021-08-03'),
+(41, 180222, 'Your requested document (CAV)is now being printed', 0, '2021-10-10'),
+(42, 180222, 'Your requested document (CAV) is now being stamped', 0, '2021-10-10'),
+(43, 180222, 'Your requested document (CAV) is now being signed', 0, '2021-10-10'),
+(44, 180222, 'Your requested document (CAV) is now ready to be released.', 0, '2021-10-10'),
+(45, 180222, 'Your requested document (CAV) was released successfully.', 0, '2021-10-10'),
+(46, 180227, 'The Registrar is now processing your document CAV', 1, '2021-10-10'),
+(47, 180227, 'The Registrar is now processing your document CAV', 1, '2021-10-14'),
+(48, 180227, 'The Registrar is now processing your document CAV', 1, '2021-10-14'),
+(49, 180227, 'Your requested document (CAV)is now being printed', 1, '2021-10-14'),
+(50, 180227, 'Your requested document (CAV) is now being stamped', 1, '2021-10-14'),
+(51, 180227, 'Your requested document (CAV) is now being signed', 1, '2021-10-14'),
+(52, 180227, 'Your requested document (CAV) is now ready to be released.', 1, '2021-10-14'),
+(53, 180227, 'Your requested document (CAV) was released successfully.', 1, '2021-10-14');
 
 -- --------------------------------------------------------
 
@@ -179,6 +221,7 @@ CREATE TABLE `student_tbl` (
   `student_username` varchar(20) NOT NULL,
   `student_password` varchar(20) NOT NULL,
   `student_level` int(11) NOT NULL,
+  `student_photo` varchar(100) NOT NULL,
   `isActive` int(11) NOT NULL,
   `student_isMale` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -187,12 +230,17 @@ CREATE TABLE `student_tbl` (
 -- Dumping data for table `student_tbl`
 --
 
-INSERT INTO `student_tbl` (`student_id`, `student_fn`, `student_mn`, `student_ln`, `student_type`, `student_email`, `student_username`, `student_password`, `student_level`, `isActive`, `student_isMale`) VALUES
-(180225, 'Cielo', 'Sanchez', 'Resurreccion', 1, 'cielo@gmail.com', 'cieloskie08', 'qwerty', 1, 1, 1),
-(180226, 'Vince', '', 'Lucas', 1, '', '', '', 2, 1, 0),
-(180227, 'Harvey', 'Sanchhez', 'Resurreccion', 2, '', 'harvey', 'qwe', 1, 1, 1),
-(180229, 'Kier', '', 'Uychutin', 1, '', 'kier', '1234', 1, 1, 1),
-(180230, 'Ken', '', 'Mondragon', 1, '', 'ken', 'admin', 1, 1, 1);
+INSERT INTO `student_tbl` (`student_id`, `student_fn`, `student_mn`, `student_ln`, `student_type`, `student_email`, `student_username`, `student_password`, `student_level`, `student_photo`, `isActive`, `student_isMale`) VALUES
+(180221, 'Van', 'Resurreccion', 'Sanchez', 1, 'asd@gmail.com', 'asdasd', 'qweqwe', 1, '', 1, 1),
+(180222, 'qweqweqwe', '', 'qweqwe', 1, 'a@a.com', 'niceone', 'asd', 1, '', 1, 1),
+(180225, 'Cielo', 'Sanchez', 'Resurreccion', 1, 'cielo@gmail.com', 'cieloskie08', 'qwerty', 1, '', 1, 1),
+(180226, 'Vince', '', 'Lucas', 1, '', '', '', 2, '', 1, 0),
+(180227, 'Harvey', 'Sanchhez', 'Resurreccion', 2, '', 'harvey', 'qwe', 1, '', 1, 1),
+(180229, 'Kier', '', 'Uychutin', 1, '', 'kier', '1234', 1, '', 1, 1),
+(180230, 'Ken', '', 'Mondragon', 1, '', 'ken', 'admin', 1, '', 1, 1),
+(180299, 'Harvey', 'Sanchez', 'Resurreccion', 2, 'harvey@gmail.com', 'harvey', 'admin', 1, '', 0, 1),
+(180764, 'Janver', 'Diaz', 'Dela Cruz', 1, 'qwe@gmail.com', 'janver', '123', 1, '', 0, 1),
+(190111, 'Mel', 'Manuel', 'Co', 1, 'mel@gmail.com', 'qwe', '123', 1, 'photos/6168bc3aca9a09.23891546.png', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -219,13 +267,21 @@ INSERT INTO `transactiondetailed_tbl` (`transactionDetailed_id`, `transactionMas
 (1, 1, 1, 1, 2, 150, 300, 9),
 (2, 1, 2, 2, 2, 100, 400, 9),
 (3, 13, 1, 1, 3, 150, 150, 0),
-(4, 14, 1, 5, 3, 750, 150, 2),
-(5, 15, 0, 2, 3, 300, 150, 1),
-(6, 15, 0, 3, 1, 300, 100, 1),
-(7, 16, 1, 12, 3, 1800, 150, 1),
-(8, 17, 0, 12, 3, 1800, 150, 1),
-(9, 17, 0, 13, 1, 1300, 100, 1),
-(10, 17, 2, 13, 1, 1300, 100, 1);
+(4, 14, 1, 5, 3, 750, 150, 7),
+(5, 15, 0, 2, 3, 300, 150, 2),
+(6, 15, 0, 3, 1, 300, 100, 2),
+(7, 16, 1, 12, 3, 1800, 150, 7),
+(8, 17, 0, 12, 3, 1800, 150, 2),
+(9, 17, 0, 13, 1, 1300, 100, 2),
+(10, 17, 2, 13, 1, 1300, 100, 7),
+(11, 18, 1, 1, 3, 150, 150, 7),
+(12, 19, 1, 22, 3, 3300, 150, 7),
+(13, 20, 1, 5, 3, 750, 150, 7),
+(14, 21, 1, 2, 3, 300, 150, 2),
+(15, 22, 1, 2, 3, 300, 150, 2),
+(16, 23, 1, 2, 3, 300, 150, 2),
+(17, 24, 1, 2, 3, 300, 150, 7),
+(18, 25, 1, 2, 3, 150, 300, 2);
 
 -- --------------------------------------------------------
 
@@ -264,7 +320,15 @@ INSERT INTO `transactionmaster_tbl` (`transaction_id`, `student_id`, `employee_i
 (14, 180227, 0, 750, 0, '2021-07-24 00:00:00', '0000-00-00 00:00:00', 0, 0),
 (15, 180227, 0, 600, 0, '2021-07-31 00:00:00', '0000-00-00 00:00:00', 0, 0),
 (16, 180227, 0, 1800, 0, '2021-07-31 00:00:00', '0000-00-00 00:00:00', 0, 0),
-(17, 180227, 0, 4400, 0, '2021-07-31 00:00:00', '0000-00-00 00:00:00', 0, 0);
+(17, 180227, 0, 4400, 0, '2021-07-31 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(18, 180227, 0, 150, 0, '2021-08-03 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(19, 180222, 0, 3300, 0, '2021-08-03 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(20, 180299, 0, 750, 0, '2021-08-03 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(21, 180227, 0, 300, 0, '2021-10-10 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(22, 180227, 0, 300, 0, '2021-10-10 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(23, 180227, 0, 300, 0, '2021-10-14 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(24, 180227, 0, 300, 0, '2021-10-14 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(25, 180227, 0, 300, 0, '2021-10-16 00:00:00', '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -382,7 +446,7 @@ ALTER TABLE `employeetype_tbl`
 -- AUTO_INCREMENT for table `notificationstudent_tbl`
 --
 ALTER TABLE `notificationstudent_tbl`
-  MODIFY `notificationStudent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `notificationStudent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `studentlevel_tbl`
@@ -400,13 +464,13 @@ ALTER TABLE `studenttype_tbl`
 -- AUTO_INCREMENT for table `transactiondetailed_tbl`
 --
 ALTER TABLE `transactiondetailed_tbl`
-  MODIFY `transactionDetailed_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `transactionDetailed_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `transactionmaster_tbl`
 --
 ALTER TABLE `transactionmaster_tbl`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `transactionstatus_tbl`
