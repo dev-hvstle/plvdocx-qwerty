@@ -35,7 +35,7 @@
         $mail->setFrom("hodl.kiddo@gmail.com");
         $mail->addAddress($student_email, $student_name);
         $mail->Subject = ($subject);
-        $mail->Body = "Greetings" . $student_name .  ",<br>" . "Your Account for PLVDOCX has been successfully verified! You can now use your credentials to log on to your account.";
+        $mail->Body = "Greetings" . " " . $student_name .  ",<br>" . "Your Account for PLVDOCX has been successfully verified! You can now use your credentials to log on to your account.";
 
         $mail->smtpClose();
 
