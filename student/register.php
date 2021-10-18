@@ -233,7 +233,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body class="particles" id="particles-js">
-     <form action="test.php" method="post" enctype="multipart/form-data">
+     <form action="code.php" method="post" enctype="multipart/form-data">
 	 <div class="plvicon">
 	 	<img src="image/plvdocxicon.png" height= "10vh" class="plvMoto"   alt="">
      	<h2>Create your PLV Docx Account</h2>
@@ -290,7 +290,7 @@
 
 			<BR><BR>
 
-			<button type="submit" name="test_btn" data-bs-toggle="modal" data-bs-target="#myModal" class="btnNext">Next</button>
+			<button type="submit" name="register_btn" data-bs-toggle="modal" data-bs-target="#myModal" class="btnNext">Next</button>
 			</div>
 			
 			

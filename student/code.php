@@ -21,7 +21,7 @@
         $student_username = $_POST['student_username'];
         $student_password = $_POST['student_password'];
         $confirm_password = $_POST['confirm_password'];
-        $isActive = 1;
+        $isActive = 0;
         $student_isMale = 1;
         $pattern = '/[\\\\\.\+\*\?\^\$\[\]\(\)\{\}\/\'\#\:\!\=\|]/';
 
@@ -80,7 +80,7 @@
                 {
                     // echo "Saved";
                     move_uploaded_file($fileTmpName, $photoDestination);
-                    $_SESSION['success'] = "Admin Profile Added";
+                    $_SESSION['success'] = "Register Successful, account is now to be processed!";
                     header('Location: loginmain.php');
                 }
                 else

@@ -119,7 +119,9 @@ include('includes/navbar.php');
                         <!-- Function Update Status -->
                         <form action="students_pendingAccount_code.php" method="post">
                             <input type="hidden" name="student_id" value="<?php echo $row['student_id']; ?>">
-                            <button type="submit" name="verify_btn" class="btn btn-primary">Verify</button>
+                            <input type="hidden" name="student_email" value="<?php echo $row['student_email']; ?>">
+                            <input type="hidden" name="student_name" value="<?php echo $row['student_fn']?>">
+                            <button type="submit" name="test_btn" class="btn btn-primary">Verify</button>
                         </form>    
 
                         </div>
