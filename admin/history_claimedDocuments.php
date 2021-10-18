@@ -9,10 +9,14 @@ include('includes/navbar.php');
 
 <div class="container-fluid">
 
+
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h5 class="m-0 font-weight-bold text-dark">Claimed Documents
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="float: right;"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        
             
     </h5>
   </div>
