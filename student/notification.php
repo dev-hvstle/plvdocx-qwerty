@@ -122,8 +122,7 @@
                                 <thead>
                                 <tr class="text-center">
                                     <th> Notification ID </th>
-                                    <th> Description </th>
-                                    <th> Notification Date </th>
+                                    <th> Description </th>  
                                 </tr>
                                 </thead>
                                 <tbody>

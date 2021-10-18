@@ -39,12 +39,12 @@ include('includes/navbar.php');
     
         $connection = mysqli_connect("localhost","root","","plvdocx_db");
         $query = "SELECT  *
-                          from student_tbl
+                          FROM student_tbl
 
                           -- inner join transactionmaster_tbl
                           -- on transactiondetailed_tbl.transactionMaster_id = transactionmaster_tbl.transaction_id
 
-                          where isActive = 0;
+                          WHERE isActive = 0;
         ";
         $query_run = mysqli_query($connection, $query);
     
@@ -79,30 +79,34 @@ include('includes/navbar.php');
                         <div class="d-flex justify-content-around">
                         <!-- Function View Student ID -->
                         
-                            
-                            <button type="submit" name="view_btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View</button>
-                            
+                            <input type="hidden" name="student_id" value="<?php echo $row['student_id']; ?>">
+                            <button type="submit" name="view_btn" class="btn btn-primary" onclick="showModal(this)" value="<?php echo $row['student_photo']; ?>">View</button>
+                            <script>
+                              function showModal(image){
+                                var id_image = image.value;
+                                $("#student_photo").attr("src", "../student/"+id_image);
+                                $("#exampleModal").modal("toggle");
+                                console.log("../student/"+id_image);
+                              }
+                            </script>
                             <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                   <div class="modal-dialog">
                                     <div class="modal-content">
                                       <div class="modal-header">
 
-                                        <h5 class="modal-title" id="exampleModalLabel">Verification! </h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Student ID</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                       </div>
                                       <div class="modal-body">
-                                      <img src="img/certification.png" style="height:20vh;" class="imgsize">
+                                      <img id="student_photo"  style="height:20vh;" class="imgsize">
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
-
-
                         </div>
                     </div>
 
@@ -113,9 +117,9 @@ include('includes/navbar.php');
                     <div class="row">
                         <div class="d-flex justify-content-around">
                         <!-- Function Update Status -->
-                        <form action="status_topay_code.php" method="post">
+                        <form action="students_pendingAccount_code.php" method="post">
                             <input type="hidden" name="student_id" value="<?php echo $row['student_id']; ?>">
-                            <button type="submit" name="done_btn" class="btn btn-primary">Done</button>
+                            <button type="submit" name="verify_btn" class="btn btn-primary">Verify</button>
                         </form>    
 
                         </div>
