@@ -33,8 +33,20 @@ include('includes/navbar.php');
     
     ?>
 
+
     <div class="table-responsive">
         
+  <table  cellspacing="5" cellpadding="5">
+        <tbody><tr>
+            <td>Minimum date:</td>
+            <td><input type="text" id="min" name="min"></td>
+        </tr>
+        <tr>
+            <td>Maximum date:</td>
+            <td><input type="text" id="max" name="max"></td>
+        </tr>
+    </tbody>
+  </table>
     <?php 
     
         $connection = mysqli_connect("localhost","root","","plvdocx_db");
@@ -49,7 +61,7 @@ include('includes/navbar.php');
         $query_run = mysqli_query($connection, $query);
     
     ?>
-
+      
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr class="text-center">
@@ -57,7 +69,7 @@ include('includes/navbar.php');
             <th> Transaction ID </th>
             <th> Document ID </th>
             <th> Document Subtotal </th>
-            
+            <th>Start date</th>
           </tr>
         </thead>
         <tbody>
