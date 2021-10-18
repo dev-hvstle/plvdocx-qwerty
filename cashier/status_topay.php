@@ -45,7 +45,7 @@ include('includes/navbar.php');
                            on transactiondetailed_tbl.transactionMaster_id = transactionmaster_tbl.transaction_id
 
                            INNER JOIN document_tbl
-                           ON transactiondetailed_tbl.document_id = document_tbl.document_name
+                           ON transactiondetailed_tbl.document_id = document_tbl.document_id
 
                           where transaction_status = 1;
         ";
@@ -73,7 +73,7 @@ include('includes/navbar.php');
                 <tr class="text-center">
                     <td><?php echo $row['transactionDetailed_id']; ?></td>
                     <td><?php echo $row['transactionMaster_id']; ?></td>
-                    <td><?php echo $row['document_id']; ?></td>
+                    <td><?php echo $row['document_name']; ?></td>
                     <td><?php echo $row['document_subtotal']; ?></td>
                    
                     <td>

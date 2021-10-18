@@ -12,7 +12,7 @@ include('includes/navbar.php');
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h5 class="m-0 font-weight-bold text-dark">To Pay
+    <h5 class="m-0 font-weight-bold text-dark">Pending Students
             
     </h5>
   </div>
@@ -39,12 +39,12 @@ include('includes/navbar.php');
     
         $connection = mysqli_connect("localhost","root","","plvdocx_db");
         $query = "SELECT  *
-                          from transactiondetailed_tbl
+                          from student_tbl
 
                           -- inner join transactionmaster_tbl
                           -- on transactiondetailed_tbl.transactionMaster_id = transactionmaster_tbl.transaction_id
 
-                          where transaction_status = 1;
+                          where isActive = 0;
         ";
         $query_run = mysqli_query($connection, $query);
     
@@ -69,19 +69,19 @@ include('includes/navbar.php');
                     ?>
 
                 <tr class="text-center">
-                    <td><?php echo $row['transactionMaster_id']; ?></td>
-                    <td><?php echo $row['document_id']; ?></td>
+                    <td><?php echo $row['student_id']; ?></td>
+                    <td><?php echo $row['student_ln'] . ", " . $row['student_fn'] . " " . $row['student_mn']; ?></td>
             
 
                     <td>
 
                     <div class="row">
                         <div class="d-flex justify-content-around">
-                        <!-- Function Update Status -->
-                        <form action="status_topay_code.php" method="post">
-                            <input type="hidden" name="transactionDetailed_id" value="<?php echo $row['transactionDetailed_id']; ?>">
-                            <button type="submit" name="done_btn" data-bs-toggle="modal" data-bs-target="#myCertificates" class="btn btn-primary">Done</button>
-                        </form>    
+                        <!-- Function View Student ID -->
+                        
+                            
+                            <button type="submit" name="view_btn" data-bs-toggle="modal" data-bs-target="#studentID" class="btn btn-primary">Done</button>
+                          
 
                         </div>
                     </div>
@@ -94,7 +94,7 @@ include('includes/navbar.php');
                         <div class="d-flex justify-content-around">
                         <!-- Function Update Status -->
                         <form action="status_topay_code.php" method="post">
-                            <input type="hidden" name="transactionDetailed_id" value="<?php echo $row['transactionDetailed_id']; ?>">
+                            <input type="hidden" name="student_id" value="<?php echo $row['student_id']; ?>">
                             <button type="submit" name="done_btn" class="btn btn-primary">Done</button>
                         </form>    
 
@@ -119,7 +119,7 @@ include('includes/navbar.php');
   </div>
 </div>
 
-<div class="modal fade" id="myCertificates">
+<div class="modal fade" id="studentID">
 
 <div class="modal-dialog">
   

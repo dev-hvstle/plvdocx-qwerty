@@ -109,8 +109,13 @@
 
                                                 where student_id = $studentID;
                                 ";
+                                $query2 = "UPDATE notificationstudent_tbl
+                                            SET notificationstudent_isSeen = 1
+                                            WHERE student_id = $studentID
+                                            AND notificationstudent_isSeen = 0";
                                 $query_run = mysqli_query($connection, $query);
-                            
+                                $query2_run = mysqli_query($connection, $query2);
+                                $_SESSION['notification_number']=0;
                             ?>
 
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
