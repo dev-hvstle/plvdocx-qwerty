@@ -51,7 +51,7 @@ include('includes/navbar.php');
     ?>
 
     
-
+      
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr class="text-center">
@@ -71,7 +71,7 @@ include('includes/navbar.php');
                 <tr class="text-center">
                     <td><?php echo $row['student_id']; ?></td>
                     <td><?php echo $row['student_ln'] . ", " . $row['student_fn'] . " " . $row['student_mn']; ?></td>
-            
+
 
                     <td>
 
@@ -80,8 +80,28 @@ include('includes/navbar.php');
                         <!-- Function View Student ID -->
                         
                             
-                            <button type="submit" name="view_btn" data-bs-toggle="modal" data-bs-target="#studentID" class="btn btn-primary">Done</button>
-                          
+                            <button type="submit" name="view_btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Verify</button>
+                            
+                            <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+
+                                        <h5 class="modal-title" id="exampleModalLabel">Verification! </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                      <img src="img/certification.png" style="height:20vh;" class="imgsize">
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
 
                         </div>
                     </div>
@@ -119,52 +139,7 @@ include('includes/navbar.php');
   </div>
 </div>
 
-<div class="modal fade" id="studentID">
 
-<div class="modal-dialog">
-  
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1>Certificates</h1>
-    </div>
-
-  <form action="documentcode.php" method="POST">
-    <div class="modal-body">
-
-      <!-- Document Name -->
-      <div class="form-group">
-          <label> Document Name </label>
-          <input type="text" name="student_id" class="form-control" placeholder="Document Name" disabled> 
-      </div>
-
-      <!-- Number of pages per copy -->
-      <div class="form-group">
-          <label> Number of pages per copy </label>
-          <input type="text" name="student_fn" class="form-control" placeholder="Number of pages per copy" disabled>
-      </div>
-
-      <!-- Price Per Page -->
-      <div class="form-group">
-          <label>Price Per Page</label>
-          <input type="text" name="student_mn" class="form-control" placeholder="Price Per Page" disabled>
-      </div>
-
-      <!-- Number of copies -->
-      <div class="form-group">
-          <label>Number of copies</label>
-          <input type="text" name="student_ln" class="form-control" placeholder="Number of copies">
-      </div>
-     
-      </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
-      </div>
-    </form>
-
-  </div>
-
-</div>
 
 
 <!-- /.container-fluid -->
