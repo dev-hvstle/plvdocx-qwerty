@@ -67,7 +67,7 @@
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Status</h6>
-            <a class="collapse-item" href="status_topay.php">To Pay</a>
+            
             <a class="collapse-item" href="status_toprocess.php">To Process</a>
             <a class="collapse-item" href="status_printing.php">Printing</a>
             <a class="collapse-item" href="status_stamping.php">Stamping</a>
