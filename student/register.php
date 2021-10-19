@@ -251,7 +251,18 @@
 		<div class="row">
 			<div class="col-sm">
 			
-     		<input type="number" name="student_id" class="student_id" placeholder="Student ID"><br>
+     		<input type="number" name="student_id" class="student_id" placeholder="Student ID" onkeypress="return isNumberKey(event);"><br>
+			 <script>
+				 function isNumberKey(evt){
+					var charCode = (evt.which) ? evt.which : event.keyCode;
+						console.log(charCode);
+							if (charCode != 46 && charCode != 45 && charCode > 31
+							&& (charCode < 48 || charCode > 57))
+							return false;
+
+						return true;
+					}
+			 </script>
 		
      		<input type="text" name="student_ln" placeholder="Last Name"><br>
 
@@ -261,9 +272,9 @@
 
 			<input type="email" name="student_email" placeholder="Email" class="email"><br>
 				
-     		<input type="text" name="student_username" placeholder="Username" class="usernameStudent"><br>
+     		<input type="text" name="student_username" pattern=".{6,}" placeholder="Username" class="usernameStudent"><br>
 			 	
-     		<input type="password" name="student_password" placeholder="Password" class="passwordStudent"><br>
+     		<input type="password" name="student_password" pattern=".{6,}" placeholder="Password" class="passwordStudent"><br>
 
 			<input type="password" name="confirm_password" class="passwordInput" placeholder="Confirm Password"><br>
 			

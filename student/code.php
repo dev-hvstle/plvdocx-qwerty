@@ -46,8 +46,12 @@
             header('Location: register.php');
         }
         //checks for student ID
-        else if(strlen((string)$student_id) < 6){
+        else if(strlen((string)$student_id) < 7){
             $_SESSION['status'] = "Student ID is not valid";
+            header('Location: register.php');
+        }
+        else if(strlen($student_password) < 6 || strlen($student_username) < 6){
+            $_SESSION['status'] = "Username and Password should be above 6 characters!";
             header('Location: register.php');
         }
         //checks if passwords matches
