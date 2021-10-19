@@ -67,7 +67,7 @@
                                 <!-- Email -->
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="text" name="employee_ln" value="<?php echo $row['employee_ln'] ?>" class="form-control" placeholder="Email">
+                                    <input type="text" name="employee_ln" value="<?php echo $row['student_email'] ?>" class="form-control" placeholder="Email">
                                 </div>
                                 
                                 <!-- Username -->
