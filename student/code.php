@@ -174,6 +174,7 @@
                 $_SESSION['student_name'] = $row['student_fn'] . " " . $row['student_mn'] . " " . $row['student_ln'];
                 $_SESSION['student_username'] = $row['student_username'];
                 $_SESSION['student_password'] = $row['student_password'];
+                $_SESSION['student_email'] = $row['student_email'];
                 $_SESSION['status'] = null;
                 $_SESSION['type'] = null;
                 // $_SESSION['id'] = $row['employee_id'];
