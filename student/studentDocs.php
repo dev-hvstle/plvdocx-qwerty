@@ -130,25 +130,31 @@
                             </div>
                           </div>
                         </div>
-                              
+                            <?php 
+                              $connection = mysqli_connect("localhost","root","","plvdocx_db");
+                              $query = "SELECT *
+                                        FROM document_tbl
+                                        WHERE isDeleted = 0";
+
+                              $query_run = mysqli_query($connection, $query);
+
+                              if(mysqli_num_rows($query_run) > 0){
+                                while($row = mysqli_fetch_assoc($query_run)){
+    
+                            ?>  
                               <div class="single-img">
-                                <button id="docx_modal" class="btnImage" onclick="showModal(this);" name="docCav_btn" value="1">
-                                  <img src="image/cav.png" class="imgsize">
+                                <button id="docx_modal" class="btnImage" onclick="showModal(this);" name="doc_btn" value="<?php echo $row['document_id'] ?>">
+                                  <img src="<?php echo $row['document_icon'] ?>" class="imgsize">
                                 </button>
                               </div>
-                              
+                            <?php 
+                                }
+                              }
+                              else{
+                                echo "No items to be displayed";
+                              }
+                            ?>
                            
-                              <div class="single-img">
-                                <button id="docx_modal" class="btnImage" onclick="showModal(this);" name="docInc_btn" value="2">
-                                  <img src="image/completion of inc grade.png" class="imgsize">
-                                </button>
-                              </div>
-                           
-                              <div class="single-img"><button class="btnImage" name="docAbsence_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/formsleaveofabsence.png" class="imgsize"></button></div>
-                           
-                              <div class="single-img"><button class="btnImage" name="docTransfer_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/transfercreds.png" class="imgsize"></button></div>
-                            
-                              <div class="single-img"><button class="btnImage" name="docDiploma_btn" data-bs-toggle="modal" data-bs-target="#myModal"><img src="image/DIPLOMA.png" class="imgsize"></button></div>
                               <script>
                                 function showModal(id){
                                   
