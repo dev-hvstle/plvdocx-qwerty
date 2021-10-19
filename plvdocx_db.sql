@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2021 at 09:05 AM
+-- Generation Time: Oct 19, 2021 at 03:45 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -32,6 +32,8 @@ CREATE TABLE `document_tbl` (
   `document_name` varchar(30) NOT NULL,
   `document_pricePerPageInPhp` int(11) NOT NULL,
   `document_pages` int(11) NOT NULL,
+  `document_processDays` int(3) NOT NULL,
+  `document_icon` varchar(100) NOT NULL,
   `isDeleted` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,9 +41,12 @@ CREATE TABLE `document_tbl` (
 -- Dumping data for table `document_tbl`
 --
 
-INSERT INTO `document_tbl` (`document_id`, `document_name`, `document_pricePerPageInPhp`, `document_pages`, `isDeleted`) VALUES
-(1, 'CAV', 150, 3, 0),
-(2, 'COR', 100, 1, 0);
+INSERT INTO `document_tbl` (`document_id`, `document_name`, `document_pricePerPageInPhp`, `document_pages`, `document_processDays`, `document_icon`, `isDeleted`) VALUES
+(1, 'CAV', 150, 3, 2, 'image/cav.png', 0),
+(2, 'COR', 100, 1, 5, 'image/inc.png', 0),
+(3, 'LOA', 100, 1, 2, 'image/formsleaveofabsence.png', 0),
+(4, 'Transfer Credentials', 100, 1, 2, 'image/transfercreds.png', 0),
+(5, 'Diploma', 100, 1, 2, 'image/DIPLOMA.png', 0);
 
 -- --------------------------------------------------------
 
@@ -231,6 +236,7 @@ CREATE TABLE `student_tbl` (
 --
 
 INSERT INTO `student_tbl` (`student_id`, `student_fn`, `student_mn`, `student_ln`, `student_type`, `student_email`, `student_username`, `student_password`, `student_level`, `student_photo`, `isActive`, `student_isMale`) VALUES
+(180220, 'Harvey', 'Sanchez', 'Resurreccion', 2, 'theveyst12@gmail.com', 'harvey', '123123', 1, 'photos/616de27ad383c5.30378941.jpg', 1, 1),
 (180221, 'Van', 'Resurreccion', 'Sanchez', 1, 'asd@gmail.com', 'asdasd', 'qweqwe', 1, '', 1, 1),
 (180222, 'qweqweqwe', '', 'qweqwe', 1, 'a@a.com', 'niceone', 'asd', 1, '', 1, 1),
 (180225, 'Cielo', 'Sanchez', 'Resurreccion', 1, 'cielo@gmail.com', 'cieloskie08', 'qwerty', 1, '', 1, 1),
@@ -238,9 +244,9 @@ INSERT INTO `student_tbl` (`student_id`, `student_fn`, `student_mn`, `student_ln
 (180227, 'Harvey', 'Sanchhez', 'Resurreccion', 2, '', 'harvey', 'qwe', 1, '', 1, 1),
 (180229, 'Kier', '', 'Uychutin', 1, '', 'kier', '1234', 1, '', 1, 1),
 (180230, 'Ken', '', 'Mondragon', 1, '', 'ken', 'admin', 1, '', 1, 1),
-(180299, 'Harvey', 'Sanchez', 'Resurreccion', 2, 'harvey@gmail.com', 'harvey', 'admin', 1, '', 0, 1),
-(180764, 'Janver', 'Diaz', 'Dela Cruz', 1, 'qwe@gmail.com', 'janver', '123', 1, '', 0, 1),
-(190111, 'Mel', 'Manuel', 'Co', 1, 'mel@gmail.com', 'qwe', '123', 1, 'photos/6168bc3aca9a09.23891546.png', 0, 1);
+(180299, 'Harvey', 'Sanchez', 'Resurreccion', 2, 'harvey@gmail.com', 'harvey', 'admin', 1, '', 1, 1),
+(180764, 'Janver', 'Diaz', 'Dela Cruz', 1, 'qwe@gmail.com', 'janver', '123', 1, 'photos/6168bc3aca9a09.23891541.png', 1, 1),
+(190111, 'Mel', 'Manuel', 'Co', 1, 'mel@gmail.com', 'qwe', '123', 1, 'photos/6168bc3aca9a09.23891546.png', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -434,7 +440,7 @@ ALTER TABLE `transactionstatus_tbl`
 -- AUTO_INCREMENT for table `document_tbl`
 --
 ALTER TABLE `document_tbl`
-  MODIFY `document_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `document_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `employeetype_tbl`
