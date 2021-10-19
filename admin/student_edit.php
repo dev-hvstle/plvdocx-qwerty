@@ -91,7 +91,7 @@
 
                                 <div class="form-group">
                                     <label> Email </label>
-                                    <input type="text" name="student_username" value="<?php echo $row['student_email'] ?>" class="form-control" placeholder="Email">
+                                    <input type="text" name="student_email" value="<?php echo $row['student_email'] ?>" class="form-control" placeholder="Email">
                                 </div>
 
                                 <div class="form-group">
