@@ -195,7 +195,7 @@
     }
 
     if(isset($_POST['buy_btn'])){
-        if($_POST['document_copies'] == 0){
+        if($_POST['document_copies'] == "" || $_POST['document_copies'] == 0){
             header('Location: studentDocs.php');
         }
         $docx_name = $_POST['document_name'];
@@ -227,7 +227,7 @@
         }
         else{
             $_SESSION['success'] = "Buy not success!";
-            //header('Location: studentDocs.php');
+            header('Location: studentDocs.php');
         }
     }
 
