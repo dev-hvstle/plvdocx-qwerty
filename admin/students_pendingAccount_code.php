@@ -51,6 +51,7 @@
             }
             else{
                 $_SESSION['status'] = "There was a problem with sendin verification email! But Student Was successfully verified.";
+                header('Location: students_pendingAccount.php');
             }
         }
         else{
