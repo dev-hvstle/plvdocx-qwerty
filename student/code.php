@@ -207,11 +207,14 @@
         $docx_price = $_POST['document_price'];
         $docx_copies = $_POST['document_copies'];
         $docx_totalPrice = $docx_price * $docx_copies;
+        $docx_processDays = $_POST['document_processDays'];
         $student_id = $_SESSION['student_id'];
         $date = date("Y/m/d");
+        $dateFinished = date("Y/m/d", strtotime('+ ' . $docx_processDays . ' weekdays'));
+        $notification_description = "Document (" . $docx_name .  ") was successfully requested, please proceed to the cashier to pay!";
 
-        $query_insertMaster = "INSERT INTO transactionmaster_tbl (student_id, amount_total, transaction_date) 
-                    VALUES ('$student_id', '$docx_totalPrice', '$date')";
+        $query_insertMaster = "INSERT INTO transactionmaster_tbl (student_id, amount_total, transaction_date, transaction_dateFinished) 
+                    VALUES ('$student_id', '$docx_totalPrice', '$date', '$dateFinished')";
         $query_select = "SELECT * FROM transactionmaster_tbl ORDER BY transaction_id DESC";
 
         $query_run = mysqli_query($connection, $query_insertMaster);
@@ -224,6 +227,10 @@
         $query_insertDetailed = "INSERT INTO transactiondetailed_tbl (transactionMaster_id, document_id, document_quantity, document_pages, document_pricePerPage, document_subtotal, transaction_status)
                     VALUES ('$transaction_id', '$document_id', '$docx_copies', '$docx_pages', '$docx_price', '$docx_totalPrice', 1)";
         $query_run2 = mysqli_query($connection, $query_insertDetailed);
+
+        $query_insertNotification = "INSERT INTO notificationstudent_tbl(student_id, notificationStudent_description, notificationStudent_isSeen, notificationStudent_date)
+                                        VALUES ('$student_id', '$notification_description', 0, '$date');";
+        $query_run3 = mysqli_query($connection, $query_insertNotification);
 
         if($query_run2){
             $_SESSION['success'] = "Bought sucessfully!";

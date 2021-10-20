@@ -38,7 +38,6 @@
   </head>
   
   <body>
-    
     <?php
       include('security.php');
       include('includes/navbar.php');
@@ -48,9 +47,7 @@
       <ul>
         <li style="float:left"><a href="#about"> <img src="image/plvdocxiconleft.png" class="plvicon"></a></li>
       </ul>
-    </div>
-    
-  
+    </div>    
     <main>
         <div class="mytabs">
             <input type="radio" id="tabfree" name="mytabs" checked="checked">
@@ -102,10 +99,11 @@
                                   
                                     </div>
                                     <div class="modal-footer">
+                                        <input type="hidden" id="document_id" name="document_id">
+                                        <input type="hidden" id="document_processDays" name="document_processDays">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         <button type="submit" name="buy_btn" class="btn btn-primary">Buy</button>
                                         <button type="submit" name="add_btn" class="btn btn-success">Add to cart</button>
-                                        <input type="hidden" id="document_id" name="document_id">
                                     </div>
                                     </form>
                                
@@ -161,6 +159,7 @@
                                       $('#docx_pages').val(data.document_pages);
                                       $('#docx_price').val(data.document_pricePerPageInPhp);
                                       $('#document_id').val(data.document_id);
+                                      $('#document_processDays').val(data.document_processDays);
                                       $("#myModal").modal("toggle");
                                     }
                                   });
