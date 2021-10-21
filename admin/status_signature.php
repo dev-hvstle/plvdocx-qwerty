@@ -59,6 +59,7 @@ include('includes/navbar.php');
             <th> Item Number </th>
             <th> Transaction ID </th>
             <th> Document ID </th>
+            <th> Number of Copies </th>
             <th> Document Subtotal </th>
             <th>Manage</th>
           </tr>
@@ -74,6 +75,7 @@ include('includes/navbar.php');
                     <td><?php echo $row['transactionDetailed_id']; ?></td>
                     <td><?php echo $row['transactionMaster_id']; ?></td>
                     <td><?php echo $row['document_name']; ?></td>
+                    <td><?php echo $row['document_quantity']; ?></td>
                     <td><?php echo $row['document_subtotal']; ?></td>
                    
                     <td>

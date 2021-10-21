@@ -57,7 +57,7 @@ include('includes/navbar.php');
         <thead>
           <tr class="text-center">
             <th> Item Number </th>
-            <th> Transaction ID </th>
+            <th> Student ID </th>
             <th> Document ID </th>
             <th> Document Subtotal </th>
             <th>Manage</th>
@@ -72,7 +72,7 @@ include('includes/navbar.php');
 
                 <tr class="text-center">
                     <td><?php echo $row['transactionDetailed_id']; ?></td>
-                    <td><?php echo $row['transactionMaster_id']; ?></td>
+                    <td><?php echo $row['student_id']; ?></td>
                     <td><?php echo $row['document_name']; ?></td>
                     <td><?php echo $row['document_subtotal']; ?></td>
                    

@@ -297,7 +297,7 @@
 			<BR>
 			<BR>
 
-			<input type="file" name="image" class="inputImage"/>
+			<input type="file" name="image" class="inputImage" title="Scanned ID Image"/>
 
 			<BR><BR>
 
