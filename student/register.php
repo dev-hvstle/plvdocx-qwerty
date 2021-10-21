@@ -119,12 +119,12 @@
 	
 	input {
 		position: relative;
-		border: 2px solid #ccc;
+	
 		width: 90%;
 		left:1.5vh;
 		height: 10%;
 		font-size: 18px;
-		border-radius: 2px;
+	
 		padding: 10px;
 	}
 
@@ -151,14 +151,29 @@
 	.inputImage{
 		position: relative;
 		top: 2vh;
-		
-		border: 2px solid #ccc;
+		border-top-style: hidden;
+		border-right-style: hidden;
+		border-left-style: hidden;
+		border-bottom-style: hidden;
+		background-color: #eee;
 		width: 90%;
-		left:1.5vh;
+		left:6.7vh;
 		height: 8%;
 		font-size: 18px;
-		border-radius: 2px;
-		padding: 10px;
+
+	}
+
+	.btnUploadID{
+		position: relative;
+		top:-2vh;
+		left:1.7vh;
+		padding:2vh;
+		font-size:15px;
+		text-align: center;
+		cursor: pointer;
+		background: white;
+		border: solid 1px gray;
+		color: #000;
 	}
 
 
@@ -199,6 +214,34 @@
 		font-size: 18px;
 		border-radius: 2px;
 		padding: 10px;
+	}
+
+	.inputImage{
+		position: relative;
+		top: 2vh;
+		border-top-style: hidden;
+		border-right-style: hidden;
+		border-left-style: hidden;
+		border-bottom-style: hidden;
+		background-color: #eee;
+		width: 90%;
+		left:6.7vh;
+		height: 8%;
+		font-size: 18px;
+
+	}
+
+	.btnUploadID{
+		position: relative;
+		top:-3.3vh;
+		left:2.3vh;
+		padding:2vh;
+		font-size:15px;
+		text-align: center;
+		cursor: pointer;
+		background: white;
+		border: solid 1px gray;
+		color: #000;
 	}
 
 	.studenttype{
@@ -296,8 +339,21 @@
 
 			<BR>
 			<BR>
+			<div class="btnFileContainer">
+			<input type="file" id="inp" name="image" class="inputImage"/>
+			<span class="btnUploadID">Upload Scanned ID</span>
+			</div>
+			
+			<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 
-			<input type="file" name="image" class="inputImage" title="Scanned ID Image"/>
+			<script>
+				$(".btnUploadID").bind("click" , function(){
+					$("#inp").click();
+				});
+			</script>
 
 			<BR><BR>
 
