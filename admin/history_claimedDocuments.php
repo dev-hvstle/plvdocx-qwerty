@@ -14,9 +14,20 @@ include('includes/navbar.php');
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h5 class="m-0 font-weight-bold text-dark">Claimed Documents
-    <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" style="float: right;"><i
+    <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="btnReport" style="float: right;"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</button>
     </h5>
+
+    <script>
+        
+        $('#dataTable').DataTable( {
+          dom: 'btnReport',
+          buttons: [
+              'copy', 'excel', 'pdf'
+          ]
+      } );
+    </script>
+    
   </div>
 
   <div class="card-body">
