@@ -47,7 +47,7 @@
 		
 		top:10vh;
 		width: 60vh;
-		height: 145vh;
+		height: 150vh;
 		border: 2px solid #ccc;
 		padding: 5vh;
 		background: #fff;
@@ -345,10 +345,9 @@
 			</div>
 			
 			<script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
-
+				src="https://code.jquery.com/jquery-3.6.0.min.js"
+				integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+				crossorigin="anonymous"></script>
 			<script>
 				$(".btnUploadID").bind("click" , function(){
 					$("#inp").click();
