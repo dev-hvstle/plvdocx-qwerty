@@ -79,6 +79,7 @@
                                         <th>Document Price</th>
                                         <th>Number of Copies</th>
                                         <th>Total Amount</th>
+                                        <th>Manage</th>
                                     </tr>
                                 </thead>
 
@@ -98,6 +99,7 @@
                                         <td data-label="Document Price"><?php echo $_SESSION['cart_data'][$row][2]?></td>
                                         <td data-label="Number of Copies"><?php echo $_SESSION['cart_data'][$row][3] ?></td>
                                         <td data-label="Total Amount"><?php echo $_SESSION['cart_data'][$row][4] ?></td>
+                                        <td>
                                         <div class="row">
                                             <div class="d-flex justify-content-around">
                                             <form action="code.php" method="post">
