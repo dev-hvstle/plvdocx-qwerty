@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2021 at 04:54 AM
+-- Generation Time: Oct 21, 2021 at 06:31 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -175,7 +175,8 @@ INSERT INTO `notificationstudent_tbl` (`notificationStudent_id`, `student_id`, `
 (57, 180220, '', 1, '2021-10-20'),
 (58, 180220, '', 1, '2021-10-20'),
 (59, 180220, '', 1, '2021-10-20'),
-(60, 180220, 'Document (CAV) was successfully requested, please proceed to the cashier to pay!', 1, '2021-10-20');
+(60, 180220, 'Document (CAV) was successfully requested, please proceed to the cashier to pay!', 1, '2021-10-20'),
+(61, 18, 'Document (CAV) was successfully requested, please proceed to the cashier to pay!', 0, '2021-10-21');
 
 -- --------------------------------------------------------
 
@@ -224,7 +225,7 @@ INSERT INTO `studenttype_tbl` (`studentType_id`, `studentType_name`) VALUES
 --
 
 CREATE TABLE `student_tbl` (
-  `student_id` int(11) NOT NULL,
+  `student_id` varchar(11) NOT NULL,
   `student_fn` varchar(20) NOT NULL,
   `student_mn` varchar(20) DEFAULT NULL,
   `student_ln` varchar(20) NOT NULL,
@@ -243,18 +244,7 @@ CREATE TABLE `student_tbl` (
 --
 
 INSERT INTO `student_tbl` (`student_id`, `student_fn`, `student_mn`, `student_ln`, `student_type`, `student_email`, `student_username`, `student_password`, `student_level`, `student_photo`, `isActive`, `student_isMale`) VALUES
-(180210, 'Harvey Van', 'Sanchez', 'Resurreccion', 1, 'theveyst12@gmail.com', 'van', '123123', 1, 'photos/616eccbdf3fe07.52241647.jpg', 1, 1),
-(180220, 'Harvey', 'Sanchez', 'Resurreccion', 2, 'theveyst12@gmail.com', 'harvey', '123123', 1, 'photos/616de27ad383c5.30378941.jpg', 1, 1),
-(180221, 'Van', 'Resurreccion', 'Sanchez', 1, 'asd@gmail.com', 'asdasd', 'qweqwe', 1, '', 1, 1),
-(180222, 'qweqweqwe', '', 'qweqwe', 1, 'a@a.com', 'niceone', 'asd', 1, '', 1, 1),
-(180225, 'Cielo', 'Sanchez', 'Resurreccion', 1, 'cielo@gmail.com', 'cieloskie08', 'qwerty', 1, '', 1, 1),
-(180226, 'Vince', '', 'Lucas', 1, '', '', '', 2, '', 1, 0),
-(180227, 'Harvey', 'Sanchhez', 'Resurreccion', 2, '', 'harvey', 'qwe', 1, '', 1, 1),
-(180229, 'Kier', '', 'Uychutin', 1, '', 'kier', '1234', 1, '', 1, 1),
-(180230, 'Ken', '', 'Mondragon', 1, '', 'ken', 'admin', 1, '', 1, 1),
-(180299, 'Harvey', 'Sanchez', 'Resurreccion', 2, 'harvey@gmail.com', 'harvey', 'admin', 1, '', 1, 1),
-(180764, 'Janver', 'Diaz', 'Dela Cruz', 1, 'qwe@gmail.com', 'janver', '123', 1, 'photos/6168bc3aca9a09.23891541.png', 1, 1),
-(190111, 'Mel', 'Manuel', 'Co', 1, 'mel@gmail.com', 'qwe', '123', 1, 'photos/6168bc3aca9a09.23891546.png', 1, 1);
+('18-0229', 'Harvey Van', 'Sanchez', 'Resurreccion', 1, 'van.resurreccion@gmail.com', 'harves', '123123', 1, 'photos/61709c2538f516.49514734.jpg', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -278,34 +268,7 @@ CREATE TABLE `transactiondetailed_tbl` (
 --
 
 INSERT INTO `transactiondetailed_tbl` (`transactionDetailed_id`, `transactionMaster_id`, `document_id`, `document_quantity`, `document_pages`, `document_pricePerPage`, `document_subtotal`, `transaction_status`) VALUES
-(1, 1, 1, 1, 2, 150, 300, 9),
-(2, 1, 2, 2, 2, 100, 400, 9),
-(3, 13, 1, 1, 3, 150, 150, 0),
-(4, 14, 1, 5, 3, 750, 150, 7),
-(5, 15, 0, 2, 3, 300, 150, 2),
-(6, 15, 0, 3, 1, 300, 100, 2),
-(7, 16, 1, 12, 3, 1800, 150, 7),
-(8, 17, 0, 12, 3, 1800, 150, 2),
-(9, 17, 0, 13, 1, 1300, 100, 2),
-(10, 17, 2, 13, 1, 1300, 100, 7),
-(11, 18, 1, 1, 3, 150, 150, 7),
-(12, 19, 1, 22, 3, 3300, 150, 7),
-(13, 20, 1, 5, 3, 750, 150, 7),
-(14, 21, 1, 2, 3, 300, 150, 2),
-(15, 22, 1, 2, 3, 300, 150, 2),
-(16, 23, 1, 2, 3, 300, 150, 2),
-(17, 24, 1, 2, 3, 300, 150, 7),
-(18, 25, 1, 2, 3, 150, 300, 2),
-(19, 26, 1, 1, 3, 150, 150, 2),
-(20, 27, 5, 1, 1, 100, 100, 1),
-(21, 28, 1, 1, 3, 150, 150, 1),
-(22, 29, 1, 10, 3, 150, 1500, 1),
-(23, 30, 1, 5, 3, 150, 750, 1),
-(24, 31, 1, 3, 3, 150, 450, 1),
-(25, 32, 1, 2, 3, 150, 300, 1),
-(26, 33, 4, 2, 1, 100, 200, 1),
-(27, 34, 2, 4, 1, 100, 400, 1),
-(28, 35, 1, 12, 3, 150, 1800, 1);
+(29, 36, 1, 1, 3, 150, 150, 1);
 
 -- --------------------------------------------------------
 
@@ -315,7 +278,7 @@ INSERT INTO `transactiondetailed_tbl` (`transactionDetailed_id`, `transactionMas
 
 CREATE TABLE `transactionmaster_tbl` (
   `transaction_id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
+  `student_id` varchar(11) NOT NULL,
   `employee_id` int(11) NOT NULL,
   `amount_total` int(11) NOT NULL,
   `amount_payment` int(11) NOT NULL,
@@ -330,39 +293,7 @@ CREATE TABLE `transactionmaster_tbl` (
 --
 
 INSERT INTO `transactionmaster_tbl` (`transaction_id`, `student_id`, `employee_id`, `amount_total`, `amount_payment`, `transaction_date`, `transaction_dateFinished`, `isFinished`, `isCancelled`) VALUES
-(1, 180227, 0, 700, 700, '2021-05-22', '2021-05-22', 0, 1),
-(4, 180227, 0, 0, 0, '2021-07-24', '0000-00-00', 0, 0),
-(5, 180227, 0, 0, 0, '2021-07-24', '0000-00-00', 0, 0),
-(6, 180227, 0, 0, 0, '2021-07-24', '0000-00-00', 0, 0),
-(7, 180227, 0, 0, 0, '2021-07-24', '0000-00-00', 0, 0),
-(8, 180227, 0, 150, 0, '2021-07-24', '0000-00-00', 0, 0),
-(9, 180227, 0, 150, 0, '2021-07-24', '0000-00-00', 0, 0),
-(10, 180227, 0, 150, 0, '2021-07-24', '0000-00-00', 0, 0),
-(11, 180227, 0, 150, 0, '2021-07-24', '0000-00-00', 0, 0),
-(12, 180227, 0, 150, 0, '2021-07-24', '0000-00-00', 0, 0),
-(13, 180227, 0, 150, 0, '2021-07-24', '0000-00-00', 0, 0),
-(14, 180227, 0, 750, 0, '2021-07-24', '0000-00-00', 0, 0),
-(15, 180227, 0, 600, 0, '2021-07-31', '0000-00-00', 0, 0),
-(16, 180227, 0, 1800, 0, '2021-07-31', '0000-00-00', 0, 0),
-(17, 180227, 0, 4400, 0, '2021-07-31', '0000-00-00', 0, 0),
-(18, 180227, 0, 150, 0, '2021-08-03', '0000-00-00', 0, 0),
-(19, 180222, 0, 3300, 0, '2021-08-03', '0000-00-00', 0, 0),
-(20, 180299, 0, 750, 0, '2021-08-03', '0000-00-00', 0, 0),
-(21, 180227, 0, 300, 0, '2021-10-10', '0000-00-00', 0, 0),
-(22, 180227, 0, 300, 0, '2021-10-10', '0000-00-00', 0, 0),
-(23, 180227, 0, 300, 0, '2021-10-14', '0000-00-00', 0, 0),
-(24, 180227, 0, 300, 0, '2021-10-14', '0000-00-00', 0, 0),
-(25, 180227, 0, 300, 0, '2021-10-16', '0000-00-00', 0, 0),
-(26, 180210, 0, 150, 0, '2021-10-19', '0000-00-00', 0, 0),
-(27, 180220, 0, 100, 0, '2021-10-19', '0000-00-00', 0, 0),
-(28, 180220, 0, 150, 0, '2021-10-20', '0000-00-00', 0, 0),
-(29, 180220, 0, 1500, 0, '2021-10-20', '1970-01-01', 0, 0),
-(30, 180220, 0, 750, 0, '2021-10-20', '1970-01-01', 0, 0),
-(31, 180220, 0, 450, 0, '2021-10-20', '2021-10-24', 0, 0),
-(32, 180220, 0, 300, 0, '2021-10-20', '2021-10-26', 0, 0),
-(33, 180220, 0, 200, 0, '2021-10-20', '1970-01-01', 0, 0),
-(34, 180220, 0, 400, 0, '2021-10-20', '2021-10-27', 0, 0),
-(35, 180220, 0, 1800, 0, '2021-10-20', '2021-10-22', 0, 0);
+(36, '18-0229', 0, 150, 0, '2021-10-21', '2021-10-25', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -480,7 +411,7 @@ ALTER TABLE `employeetype_tbl`
 -- AUTO_INCREMENT for table `notificationstudent_tbl`
 --
 ALTER TABLE `notificationstudent_tbl`
-  MODIFY `notificationStudent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `notificationStudent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `studentlevel_tbl`
@@ -498,13 +429,13 @@ ALTER TABLE `studenttype_tbl`
 -- AUTO_INCREMENT for table `transactiondetailed_tbl`
 --
 ALTER TABLE `transactiondetailed_tbl`
-  MODIFY `transactionDetailed_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `transactionDetailed_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `transactionmaster_tbl`
 --
 ALTER TABLE `transactionmaster_tbl`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `transactionstatus_tbl`
