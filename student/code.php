@@ -222,14 +222,14 @@
                 header('Location: studentDocs.php');
             }
             else{
-                $_SESSION['status'] = "Email id / Password is Invalid";
-                header('Location: studentDocs.php');
+                $_SESSION['status'] = "Username / Password is Invalid";
+                header('Location: loginmain.php');
             }
         }
         else{
-            $_SESSION['match'] = preg_match($patter, $password_login);
+            $_SESSION['match'] = preg_match($pattern, $password_login);
             $_SESSION['status'] = "Email id / Password is Invalid";
-            header('Location: studentDocs.php');
+            header('Location: loginmain.php');
         }
     }
 
