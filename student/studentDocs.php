@@ -102,7 +102,7 @@
                                         <input type="hidden" id="document_id" name="document_id">
                                         <input type="hidden" id="document_processDays" name="document_processDays">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" name="buy_btn" class="btn btn-primary">Buy</button>
+                                        <button type="submit" name="buy_btn" class="btn btn-primary">Request</button>
                                         <button type="submit" name="add_btn" class="btn btn-success">Add to cart</button>
                                     </div>
                                     </form>

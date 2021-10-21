@@ -251,7 +251,7 @@
 		<div class="row">
 			<div class="col-sm">
 			
-     		<input type="number" name="student_id" class="student_id" placeholder="Student ID" onkeypress="return isNumberKey(event);"><br>
+     		<input type="text" name="student_id" class="student_id" placeholder="Student ID" onkeypress="return isNumberKey(event);"><br>
 			 <script>
 				 function isNumberKey(evt){
 					var charCode = (evt.which) ? evt.which : event.keyCode;
@@ -276,7 +276,7 @@
 			 	
      		<input type="password" name="student_password" pattern=".{6,}" placeholder="Password" class="passwordStudent"><br>
 
-			<input type="password" name="confirm_password" class="passwordInput" placeholder="Confirm Password"><br>
+			<input type="password" name="confirm_password" pattern=".{6,}" class="passwordInput" placeholder="Confirm Password"><br>
 			
 			
 

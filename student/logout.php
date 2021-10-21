@@ -2,6 +2,6 @@
 session_start();
 
     session_destroy();
-    unset($_SESSION['username']);
+    session_unset();
     header('Location: loginmain.php');
 ?>

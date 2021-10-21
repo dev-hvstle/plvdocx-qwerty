@@ -48,7 +48,16 @@
               $query_run = mysqli_query($connection, $query);
               $_SESSION['notification_number'] = mysqli_num_rows($query_run);
             ?>
-            <span class="badge"><?php echo $_SESSION['notification_number'] ?></span>
+            <span id="badge" class="badge"><?php echo $_SESSION['notification_number'] ?></span>
+            <script>
+              if(<?php echo $_SESSION['notification_number'] ?> > 0){
+                document.getElementById("badge").style.visibility = ""
+                document.getElementById("badge").style.color = "#CE6918";
+              }
+              else{
+                document.getElementById("badge").style.visibility = "hidden";
+              }
+            </script>
               <g class="fa-group">
                 <path
                   fill="currentColor"

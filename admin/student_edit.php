@@ -103,6 +103,11 @@
                                     <label>Password</label>
                                     <input type="password" name="student_password" value="<?php echo $row['student_password'] ?>" class="form-control" placeholder="Enter Password">
                                 </div>
+
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" name="confirmpassword" value="" class="form-control" placeholder="Confirm Password">
+                                </div>
                                 <a href="student.php" class="btn btn-danger"> CANCEL </a>
                                 <button type="submit" name="updatebtn" class="btn btn-primary"> Update </button>
                             </form>

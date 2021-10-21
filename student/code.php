@@ -12,9 +12,9 @@
     if(isset($_POST['register_btn']))
     {
         $student_id = $_POST['student_id'];
-        $student_fn = $_POST['student_fn'];
-        $student_mn = $_POST['student_mn'];
-        $student_ln = $_POST['student_ln'];
+        $student_fn = ucfirst($_POST['student_fn']);
+        $student_mn = ucfirst($_POST['student_mn']);
+        $student_ln = ucfirst($_POST['student_ln']);
         $student_type = $_POST['student_type'];
         $student_email = $_POST['student_email'];
         $student_level = $_POST['student_level'];
@@ -35,9 +35,25 @@
         $fileActualExt = strtolower(end($fileExt));
         $allowed = array('jpeg','jpg','png');
 
+        $query_checkData = "SELECT *
+                            FROM student_tbl
+                            WHERE student_id = '$student_id'
+                            OR student_username = '$student_username'
+                            OR student_email = '$student_email'";
+        
+        $query_run_checkData = mysqli_query($connection, $query_checkData);
+
         //checks for student id, name, password, and email
         if($student_id === "" || $student_fn === "" || $student_ln === "" || $student_username === "" || $student_password === "" || $student_email === ""){
             $_SESSION['status'] = "Some Fields Are Missing.";
+            header('Location: register.php');
+        }
+        else if(strpos($student_id, '-') !== false){
+            $_SESSION['status'] = "Incorrect Student ID format (xx-xxxx) ";
+            header('Location: register.php');
+        }
+        else if(substr($student_id, 0, 3) !== "SHS" && $student_level == 2){
+            $_SESSION['status'] = "Incorrect Student ID format (SHSxx-xxxx) ";
             header('Location: register.php');
         }
         //checks for student type and level
@@ -68,6 +84,21 @@
             $_SESSION['status'] = "There was an error when uploading the image";
             header('Location: register.php');
         }
+        else if(mysqli_num_rows($query_run_checkData) > 0){
+            $row = mysqli_fetch_assoc($query_run_checkData);
+            if($student_id == $row['student_id']){
+                $_SESSION['status'] = "Student ID already exist!";
+                header('Location: register.php');
+            }
+            else if($student_email == $row['student_email']){
+                $_SESSION['status'] = "Email already exist!";
+                header('Location: register.php');
+            }
+            else if($student_username == $row['student_username']){
+                $_SESSION['status'] = "Username already exist!";
+                header('Location: register.php');
+            }
+        }
         //commits student data to database
         else{
             if($student_password === $confirm_password && $student_password != null && $confirm_password != null)
@@ -89,7 +120,7 @@
                 }
                 else
                 {
-                    $_SESSION['status'] = $student_type;
+                    $_SESSION['status'] = "Student ID already exist!";
                     header('Location: register.php');
                 }
             }

@@ -148,7 +148,17 @@
 	 	<img src="image/plvdocxicon.png" height= "10vh" class="plvMoto"   alt="">
      	<h2>Log In</h2>
 		<h2>
-			
+			<?php 
+				if(isset($_SESSION['success']) && $_SESSION['success'] !=''){
+					echo '<h2 class="bg-primary text-black"> '.$_SESSION['success'].' </h2>';
+					unset($_SESSION['success']);
+				}
+
+				if(isset($_SESSION['status']) && $_SESSION['status'] !=''){
+					echo '<h2 class="bg-danger text-black"> '.$_SESSION['status'].'</h2>';
+					unset($_SESSION['status']);
+				}
+			?>
 		</h2>
 	 </div>
      	<label>Username</label>

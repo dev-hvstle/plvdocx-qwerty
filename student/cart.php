@@ -120,7 +120,7 @@
 
                         <div class="container">
                             <form action="code.php" method="POST">
-                            <button type="submit" name="checkOut_btn" class="btn btn-success" id="CheckOut">Check Out</button>        
+                            <button type="submit" name="checkOut_btn" class="btn btn-success" id="CheckOut">Check Out Documents</button>        
                             </form>  
                         </div>
        

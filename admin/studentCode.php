@@ -87,49 +87,4 @@
         }
     }
 
-    if(isset($_POST['delete_btn'])){
-        $student_id = $_POST['delete_id'];
-        $query = "UPDATE student_tbl SET isActive=0 WHERE student_id='$student_id' ";
-        $query_run = mysqli_query($connection, $query);
-
-        if($query_run){
-            $_SESSION['success'] = "Your Data is Deleted";
-            header('Location: student.php');
-        }
-        else{
-            $_SESSION['status'] = "Your Data is NOT Deleted";
-            header('Location: student.php');
-        }    
-    }
-
-
-    if(isset($_POST['login_btn'])){
-
-        function validate($data){
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-         }
-
-        $username_login = validate($_POST['username']);
-        $password_login = validate($_POST['password']);
-
-        $query = "SELECT * FROM student_tbl WHERE student_username='$username_login' AND student_password='$password_login'";
-        $query_run = mysqli_query($connection, $query);
-
-        if(mysqli_fetch_array($query_run)){
-            $_SESSION['username'] = $username_login;
-            header('Location: index.php');
-        }
-        else{
-            $_SESSION['status'] = 'Email id / Password is Invalid';
-            echo "wrong";
-            header('Location: index.php');
-        }
-    }
-
-    
-
-
 ?>
