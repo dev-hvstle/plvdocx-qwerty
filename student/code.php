@@ -194,7 +194,11 @@
 
         
 
-        $query = "SELECT * FROM student_tbl WHERE student_username='$username_login' AND student_password='$password_login'";
+        $query = "SELECT * 
+                    FROM student_tbl 
+                    WHERE student_username='$username_login' 
+                    AND student_password='$password_login'
+                    AND isActive = 1";
         $query_run = mysqli_query($connection, $query);
         $row = mysqli_fetch_assoc($query_run);
 
