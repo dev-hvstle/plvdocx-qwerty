@@ -48,7 +48,7 @@
             $_SESSION['status'] = "Some Fields Are Missing.";
             header('Location: register.php');
         }
-        else if(strpos($student_id, '-') !== false){
+        else if(strpos($student_id, '-') === false){
             $_SESSION['status'] = "Incorrect Student ID format (xx-xxxx) ";
             header('Location: register.php');
         }
