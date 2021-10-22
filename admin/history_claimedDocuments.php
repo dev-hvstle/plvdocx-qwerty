@@ -30,17 +30,7 @@ include('includes/navbar.php');
                                 class="fas fa-download fa-sm text-white-50"></i> print</button>
     </h5>
 
-    <script>
-        
-        $(document).ready(function() {
-          $('#dataTable').DataTable( {
-              dom: 'Bfrtip',
-              buttons: [
-                  'copy', 'csv', 'excel', 'pdf', 'print'
-              ]
-          } );
-      } );
-    </script>
+  
     
   </div>
 
@@ -88,8 +78,18 @@ include('includes/navbar.php');
         $query_run = mysqli_query($connection, $query);
     
     ?>
-      
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <script>
+        
+        $(document).ready(function() {
+          $('#tableData').DataTable( {
+              dom: 'Bfrtip',
+              buttons: [
+                  'copy', 'csv', 'excel', 'pdf', 'print'
+              ]
+          } );
+      } );
+    </script>
+      <table class="table table-bordered" id="tableData" width="100%" cellspacing="0">
         <thead>
           <tr class="text-center">
             <th> Item Number </th>
