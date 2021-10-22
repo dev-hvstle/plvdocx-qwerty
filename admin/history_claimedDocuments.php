@@ -14,17 +14,31 @@ include('includes/navbar.php');
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h5 class="m-0 font-weight-bold text-dark">Claimed Documents
-    <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="btnReport" style="float: right;"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</button>
+    <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="copy" style="float: right; margin:1vh;"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Copy</button>
+
+    <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="csv" style="float: right; margin:1vh;"><i
+                                class="fas fa-download fa-sm text-white-50"></i> CSV</button>
+
+    <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="excel" style="float: right; margin:1vh;"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Excel</button>
+
+    <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="pdf" style="float: right; margin:1vh;"><i
+                                class="fas fa-download fa-sm text-white-50"></i> pdf</button>
+                                
+    <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="print" style="float: right; margin:1vh;"><i
+                                class="fas fa-download fa-sm text-white-50"></i> print</button>
     </h5>
 
     <script>
         
-        $('#dataTable').DataTable( {
-          dom: 'btnReport',
-          buttons: [
-              'copy', 'excel', 'pdf'
-          ]
+        $(document).ready(function() {
+          $('#dataTable').DataTable( {
+              dom: 'Bfrtip',
+              buttons: [
+                  'copy', 'csv', 'excel', 'pdf', 'print'
+              ]
+          } );
       } );
     </script>
     
