@@ -89,6 +89,7 @@ include('includes/navbar.php');
           } );
       } );
     </script>
+    
       <table class="table table-bordered" id="tableData" width="100%" cellspacing="0">
         <thead>
           <tr class="text-center">
