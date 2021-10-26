@@ -355,8 +355,9 @@
 			</script>
 
 			<BR><BR>
-
+			
 			<button type="submit" name="register_btn" data-bs-toggle="modal" data-bs-target="#myModal" class="btnNext">Next</button>
+			<button type="submit" name="register_btn" data-bs-toggle="modal" data-bs-target="#myModal" class="btnNext">Back</button>
 			</div>
 			
 			
